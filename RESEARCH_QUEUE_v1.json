@@ -1,0 +1,63 @@
+{
+  "version": "1.0",
+  "status": "research planning",
+  "tasks": [
+    {
+      "id": "RQ-001",
+      "priority": "P1",
+      "region": "Korea",
+      "area": "Assessment",
+      "goal": "Find official implementation cases of AI-era assessment redesign"
+    },
+    {
+      "id": "RQ-002",
+      "priority": "P1",
+      "region": "Korea",
+      "area": "Governance",
+      "goal": "Find official university/sector AI governance, privacy, data and procurement policies"
+    },
+    {
+      "id": "RQ-003",
+      "priority": "P1",
+      "region": "Global",
+      "area": "Student outcomes",
+      "goal": "Find empirical evidence of student learning/support outcomes"
+    },
+    {
+      "id": "RQ-004",
+      "priority": "P2",
+      "region": "Korea",
+      "area": "Competency",
+      "goal": "Expand student/faculty AI competency frameworks"
+    },
+    {
+      "id": "RQ-005",
+      "priority": "P2",
+      "region": "Global",
+      "area": "Workforce",
+      "goal": "Find faculty/staff role and workflow redesign evidence"
+    },
+    {
+      "id": "RQ-006",
+      "priority": "P2",
+      "region": "Korea",
+      "area": "Transformation",
+      "goal": "Find institution-wide AI strategy and operational transformation cases"
+    },
+    {
+      "id": "RQ-007",
+      "priority": "P3",
+      "region": "Global",
+      "area": "Trust",
+      "goal": "Expand disclosure/transparency/integrity implementation evidence"
+    },
+    {
+      "id": "RQ-008",
+      "priority": "P3",
+      "region": "Korea",
+      "area": "Student outcomes",
+      "goal": "Find measured AI-enabled student experience/support cases"
+    }
+  ],
+  "workflow": "research queue -> candidate -> verification queue -> verified evidence -> gap matrix/signal score update"
+}

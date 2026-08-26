@@ -1,0 +1,20 @@
+{
+  "states": [
+    "discovered",
+    "fetched",
+    "metadata_checked",
+    "claim_checked",
+    "dedup_checked",
+    "verified",
+    "published",
+    "signal_refreshed"
+  ],
+  "failure_routes": {
+    "fetch_failed": "retry/hold",
+    "metadata_conflict": "needs_review",
+    "unsupported_claim": "rejected",
+    "duplicate": "merge",
+    "no_change": "finish_without_publish"
+  },
+  "invariant": "Only verified records mutate the published Evidence corpus."
+}
