@@ -1,0 +1,15 @@
+name: Radar weekly recompute
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 1'
+jobs:
+  recompute:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python backend/recompute_signals.py
+      - name: Note
+        run: echo "Discovery/verification remains a reviewed ingestion step; add credentials/connectors only in your deployment environment."
