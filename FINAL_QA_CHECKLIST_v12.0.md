@@ -1,0 +1,12 @@
+# Final QA Checklist
+- [x] Evidence IDs retained
+- [x] Official-source provenance retained
+- [x] Plan vs operation states separated
+- [x] Participation vs outcome separated
+- [x] Cross-program provenance guardrail retained
+- [x] Source-balance policy retained
+- [x] Confidence calibration retained
+- [x] Change/audit trace retained
+- [x] Korea implementation ladder retained
+- [x] Outcome/value layer retained
+- [x] Static prototype vs live-backend boundary stated

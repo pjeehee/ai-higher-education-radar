@@ -1,0 +1,23 @@
+{
+  "version": "7.6",
+  "evidence_count": 87,
+  "added": 4,
+  "layers": [
+    "sector_policy",
+    "institutional_adoption",
+    "implementation",
+    "measured_outcome"
+  ],
+  "new_focus": [
+    "KCUE ethics guidance",
+    "national AI basic curriculum program",
+    "sector leadership readiness",
+    "university implementation"
+  ],
+  "next": [
+    "extract detailed ethics-guideline dimensions",
+    "map 20 participating universities",
+    "sample implementation evidence from selected universities",
+    "seek outcome/assessment evidence"
+  ]
+}

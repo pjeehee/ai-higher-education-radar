@@ -1,0 +1,79 @@
+{
+  "version": "6.7",
+  "total": 79,
+  "by_group": {
+    "국내 정책·지원기관": 9,
+    "국제·정책기관": 5,
+    "해외 대학": 16,
+    "고등교육 리딩기관": 37,
+    "국내 대학": 12
+  },
+  "top_institutions": [
+    [
+      "EDUCAUSE",
+      13
+    ],
+    [
+      "Jisc",
+      9
+    ],
+    [
+      "한국대학교육협의회 (KCUE)",
+      6
+    ],
+    [
+      "TEQSA",
+      5
+    ],
+    [
+      "UNESCO",
+      3
+    ],
+    [
+      "QAA",
+      3
+    ],
+    [
+      "Stanford University",
+      3
+    ],
+    [
+      "OECD",
+      2
+    ],
+    [
+      "UCLA",
+      2
+    ],
+    [
+      "Cornell University",
+      2
+    ],
+    [
+      "UNESCO IESALC",
+      2
+    ],
+    [
+      "Harvard University",
+      2
+    ],
+    [
+      "서울대학교",
+      2
+    ],
+    [
+      "고려대학교",
+      2
+    ],
+    [
+      "QAA / LSE-led consortium",
+      2
+    ]
+  ],
+  "rules": [
+    "reward independent source families",
+    "penalize repeated same-institution evidence in signal strength",
+    "keep domestic/international streams visible",
+    "do not infer sector prevalence from corpus frequency"
+  ]
+}

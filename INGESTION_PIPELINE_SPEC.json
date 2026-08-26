@@ -1,0 +1,33 @@
+{
+  "stages": [
+    "discover",
+    "fetch primary",
+    "verify",
+    "extract metadata",
+    "classify",
+    "deduplicate",
+    "score evidence",
+    "update signal",
+    "publish"
+  ],
+  "required_fields": [
+    "institution",
+    "group",
+    "topic",
+    "title",
+    "date",
+    "year",
+    "fact",
+    "why",
+    "url",
+    "type",
+    "importance"
+  ],
+  "verification_status": [
+    "candidate",
+    "verified",
+    "rejected",
+    "needs_review"
+  ],
+  "principle": "No hallucinated records. Missing metadata stays missing/needs_review rather than inferred."
+}

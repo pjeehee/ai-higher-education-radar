@@ -1,0 +1,16 @@
+{
+  "status_fields": [
+    "announced",
+    "funded",
+    "development_planned",
+    "operating",
+    "participation_measured",
+    "outcome_measured"
+  ],
+  "rule": "A development plan is not equivalent to an operating curriculum.",
+  "priority_outcome_targets": [
+    "서울여자대학교",
+    "동국대학교 WISE캠퍼스",
+    "세종대학교"
+  ]
+}

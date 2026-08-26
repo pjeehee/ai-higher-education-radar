@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "dimensions": [
+    "source group",
+    "topic",
+    "institution count",
+    "evidence count",
+    "core evidence count"
+  ],
+  "guardrails": [
+    "absence in corpus is not evidence of absence in the real world",
+    "comparison uses verified records only",
+    "do not infer institutional performance rankings from evidence volume",
+    "show source-supported facts before generated interpretation"
+  ]
+}

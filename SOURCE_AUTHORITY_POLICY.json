@@ -1,0 +1,19 @@
+{
+  "Tier A": [
+    "regulator/quality assurance",
+    "intergovernmental"
+  ],
+  "Tier B": [
+    "recognised HE sector body"
+  ],
+  "Tier C": [
+    "official university source"
+  ],
+  "excluded_primary": [
+    "webinar/event promotion",
+    "vendor marketing",
+    "search snippets",
+    "unsourced commentary"
+  ],
+  "rule": "official reachable primary page + supported fact required"
+}

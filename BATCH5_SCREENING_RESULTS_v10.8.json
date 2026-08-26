@@ -1,0 +1,21 @@
+{
+  "동신대학교": {
+    "decision": "PROMOTE",
+    "level": "L2+",
+    "basis": [
+      "AI convergence education center",
+      "full-cycle curriculum plan",
+      "actual faculty AI training operation"
+    ]
+  },
+  "동명대학교": {
+    "decision": "PROMOTE",
+    "level": "L2",
+    "basis": [
+      "AI convergence education research center",
+      "curriculum development/research",
+      "program operations/performance management"
+    ]
+  },
+  "next": "prioritize participation and outcome evidence for all L2/L2+ institutions"
+}

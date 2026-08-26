@@ -1,0 +1,9 @@
+{
+  "states": {
+    "PLAN_VERIFIED": "official institution source specifies curriculum/organization/faculty-support plan",
+    "OPERATION_VERIFIED": "official evidence confirms actual course/program operation",
+    "PARTICIPATION_VERIFIED": "actual enrollment/participation/use data",
+    "OUTCOME_VERIFIED": "measured learning/assessment/work outcomes"
+  },
+  "promotion_rule": "PLAN_VERIFIED alone remains FOLLOW+; L2 requires OPERATION_VERIFIED or a clearly functioning implementation unit with operational duties."
+}

@@ -1,0 +1,24 @@
+{
+  "participation": [
+    "enrollment",
+    "completion",
+    "faculty participation",
+    "program usage"
+  ],
+  "experience": [
+    "satisfaction",
+    "perceived usefulness",
+    "access/equity"
+  ],
+  "learning_outcome": [
+    "assessment performance",
+    "demonstrated competency",
+    "course learning evidence"
+  ],
+  "institutional_outcome": [
+    "curriculum continuation",
+    "policy revision",
+    "resource allocation"
+  ],
+  "rule": "Participation and satisfaction do not count as learning outcomes."
+}

@@ -1,0 +1,43 @@
+{
+  "candidate": {
+    "required": [
+      "url",
+      "source_id",
+      "discovered_at",
+      "fingerprint"
+    ],
+    "status": "candidate"
+  },
+  "verification": {
+    "checks": [
+      "official_primary",
+      "metadata",
+      "claim_support",
+      "relevance",
+      "dedup"
+    ],
+    "outputs": [
+      "verified",
+      "needs_review",
+      "rejected"
+    ]
+  },
+  "evidence": {
+    "required": [
+      "record_id",
+      "institution",
+      "topic",
+      "title",
+      "fact",
+      "url",
+      "source_authority",
+      "verification_status"
+    ],
+    "publish_if": "verified"
+  },
+  "jobs": {
+    "discovery": "scheduled by source priority",
+    "link_health": "periodic",
+    "signal_refresh": "after verified evidence change"
+  }
+}

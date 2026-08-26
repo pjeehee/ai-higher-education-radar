@@ -1,0 +1,29 @@
+{
+  "version": "6.0",
+  "verified_evidence": 71,
+  "completed_stages": [
+    "P1 evidence expansion round 3",
+    "governance gap reinforcement",
+    "signal-ready corpus refresh",
+    "production handoff consolidation"
+  ],
+  "ready": [
+    "source registry",
+    "research queue",
+    "verification gate",
+    "provenance",
+    "signal scoring",
+    "gap matrix",
+    "watchlist",
+    "QA dashboard",
+    "exports",
+    "executive brief"
+  ],
+  "next_requires_live_backend": [
+    "scheduled web discovery",
+    "primary-page fetching",
+    "persistent database",
+    "link-health checks",
+    "automatic change detection"
+  ]
+}

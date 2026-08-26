@@ -1,0 +1,21 @@
+{
+  "전주대학교": {
+    "decision": "PROMOTE",
+    "level": "L2",
+    "basis": [
+      "staged curriculum pathway",
+      "president-level AI education institute",
+      "faculty development",
+      "performance management"
+    ]
+  },
+  "국립경국대학교": {
+    "decision": "FOLLOW+",
+    "level": "L1-L2 candidate",
+    "basis": [
+      "official university-wide AI basic education implementation announcement"
+    ],
+    "gate": "verify curriculum/faculty-development/operating detail"
+  },
+  "next_rule": "For L2 institutions, prioritize operating, participation and outcome evidence over additional plan documents."
+}

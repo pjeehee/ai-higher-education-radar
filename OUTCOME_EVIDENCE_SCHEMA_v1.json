@@ -1,0 +1,28 @@
+{
+  "domains": [
+    "learning",
+    "student_experience",
+    "employability",
+    "workforce_work"
+  ],
+  "preferred_evidence": [
+    "measured outcomes",
+    "survey with disclosed methodology",
+    "institutional metrics",
+    "multi-institution study"
+  ],
+  "separate_from_outcome": [
+    "adoption rate",
+    "tool availability",
+    "license count",
+    "promotional claims"
+  ],
+  "required_context": [
+    "population",
+    "setting",
+    "measure",
+    "timeframe when available",
+    "source"
+  ],
+  "guardrail": "Do not generalize effectiveness beyond the population, context and measure supported by the evidence."
+}

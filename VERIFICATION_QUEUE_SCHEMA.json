@@ -1,0 +1,30 @@
+{
+  "statuses": [
+    "candidate",
+    "metadata_checked",
+    "claim_checked",
+    "relevance_checked",
+    "dedup_checked",
+    "verified",
+    "rejected",
+    "needs_review"
+  ],
+  "hard_fail": [
+    "non-official primary source",
+    "unreachable/no evidence page",
+    "claim unsupported by source"
+  ],
+  "never_infer": [
+    "publication date",
+    "institutional policy status",
+    "implementation scope",
+    "student outcome"
+  ],
+  "human_or_agent_review": [
+    "ambiguous claim",
+    "conflicting dates",
+    "policy vs recommendation distinction",
+    "signal-strength change"
+  ],
+  "publish_gate": "verified only"
+}

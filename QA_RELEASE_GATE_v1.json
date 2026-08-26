@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "release_gate": {
+    "publish": [
+      "verification_status=verified",
+      "source URL retained",
+      "evidence/intelligence separated"
+    ],
+    "hold": [
+      "ambiguous scope",
+      "conflicting metadata",
+      "unsupported claim",
+      "duplicate unresolved"
+    ],
+    "reject": [
+      "non-primary source where primary is required",
+      "fabricated/inferred metadata",
+      "unverifiable factual claim"
+    ]
+  },
+  "operational_checks": [
+    "priority source discovery coverage",
+    "verification queue backlog",
+    "signal-score transitions",
+    "link health",
+    "correction log",
+    "source-family balance"
+  ],
+  "production_boundary": "Scheduled discovery, HTTP link checking and automated fetching require a live networked backend."
+}

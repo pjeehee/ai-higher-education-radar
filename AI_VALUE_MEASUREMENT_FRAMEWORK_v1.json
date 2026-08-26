@@ -1,0 +1,34 @@
+{
+  "layers": {
+    "adoption": [
+      "active users",
+      "licenses",
+      "usage frequency"
+    ],
+    "capability": [
+      "AI literacy",
+      "training completion",
+      "confidence",
+      "role-specific competency"
+    ],
+    "outcome": [
+      "learning evidence",
+      "student support resolution",
+      "workload/time",
+      "quality"
+    ],
+    "value": [
+      "cost",
+      "ROI",
+      "risk reduction",
+      "strategic contribution"
+    ]
+  },
+  "rule": "Do not treat adoption metrics as evidence of effectiveness.",
+  "decision_states": [
+    "adoption_only",
+    "capability_building",
+    "outcome_observed",
+    "value_demonstrated"
+  ]
+}

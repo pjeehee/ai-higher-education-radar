@@ -1,0 +1,31 @@
+{
+  "version": "9.3",
+  "dimensions": {
+    "curriculum": [
+      "official course page",
+      "microcredential/minor",
+      "curriculum model"
+    ],
+    "faculty_development": [
+      "faculty AI training",
+      "teaching support"
+    ],
+    "governance": [
+      "dedicated unit",
+      "policy/guideline",
+      "KPI/feedback"
+    ],
+    "operations": [
+      "actual course operation",
+      "enrollment",
+      "participation"
+    ]
+  },
+  "decisions": {
+    "PROMOTE": "verified institution-specific implementation evidence",
+    "FOLLOW": "credible official plan but operation not yet verified",
+    "HOLD": "selection/funding only",
+    "REVIEW": "conflicting or ambiguous evidence"
+  },
+  "guardrail": "Never promote based solely on selection, funding, hiring intent, or search snippets."
+}

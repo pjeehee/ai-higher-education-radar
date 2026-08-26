@@ -1,0 +1,6 @@
+FINAL v12.0
+Research stages consolidated into release candidate.
+Verified representative corpus: 116
+Final-pass additions: 2
+Added: Duksung AIMy actual platform operation; KCUE/Ministry 20-university launch/shared consortium implementation.
+Final QA and product-boundary documentation included.

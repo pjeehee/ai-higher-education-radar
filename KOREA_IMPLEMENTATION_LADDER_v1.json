@@ -1,0 +1,11 @@
+{
+  "levels": {
+    "L0": "policy/program announcement",
+    "L1": "selection/funding/governance",
+    "L2": "curriculum/guideline/faculty-development operation",
+    "L3": "participation/use data",
+    "L4": "measured outcomes",
+    "L5": "iterative institutionalization"
+  },
+  "rule": "Never promote an institution to a higher level without institution-specific official evidence."
+}

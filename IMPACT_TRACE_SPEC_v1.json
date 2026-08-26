@@ -1,0 +1,28 @@
+{
+  "chain": [
+    "evidence_record",
+    "topic_mapping",
+    "signal_component",
+    "score_delta",
+    "gap_delta",
+    "brief_statement"
+  ],
+  "store": [
+    "before_value",
+    "after_value",
+    "trigger_record_id",
+    "timestamp",
+    "scoring_version"
+  ],
+  "review_required": [
+    "signal status transition",
+    "fact change",
+    "topic remap",
+    "authority change",
+    "contradictory evidence"
+  ],
+  "no_recompute": [
+    "link-health-only change"
+  ],
+  "principle": "Every material Intelligence change must be traceable to verified Evidence."
+}

@@ -1,0 +1,40 @@
+{
+  "priority_1": [
+    "서울여자대학교",
+    "동국대학교(WISE)"
+  ],
+  "reason": "KCUE launch source confirms these institutions publicly shared implementation plans.",
+  "priority_2": [
+    "덕성여자대학교",
+    "동국대학교",
+    "세종대학교",
+    "용인대학교",
+    "한국외국어대학교",
+    "건국대학교(GLOCAL)",
+    "경운대학교",
+    "국립경국대학교",
+    "국립한밭대학교",
+    "동명대학교",
+    "동신대학교",
+    "동의대학교",
+    "부산외국어대학교",
+    "송원대학교",
+    "순천향대학교",
+    "전주대학교",
+    "창신대학교",
+    "한라대학교"
+  ],
+  "targets": [
+    "official curriculum pages",
+    "course descriptions",
+    "faculty AI development programs",
+    "dedicated governance units",
+    "participation metrics",
+    "measured learning outcomes"
+  ],
+  "exclude": [
+    "webinars without implementation evidence",
+    "vendor promotion",
+    "search-snippet-only claims"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "창신대학교": {
+    "decision": "PROMOTE",
+    "level": "L2+",
+    "maturity": [
+      "academic regulation integration",
+      "modular courses/microdegree",
+      "faculty diagnostic-feedback loop"
+    ]
+  },
+  "한라대학교": {
+    "decision": "PROMOTE",
+    "level": "L2+",
+    "maturity": [
+      "AI education center",
+      "content development",
+      "student-facing flexible-semester operation"
+    ]
+  },
+  "용인대학교": {
+    "decision": "HOLD/FOLLOW",
+    "level": "L1",
+    "reason": "selection/funding verified; institution-specific operation detail not yet sufficient in this pass"
+  },
+  "new_weighting": "formal academic institutionalization and verified operation > development plan > selection announcement"
+}

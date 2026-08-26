@@ -1,0 +1,9 @@
+{
+  "priority_logic": [
+    "official institution page first",
+    "implementation evidence before additional policy commentary",
+    "new independent institution before repeated evidence from already-dense institutions",
+    "L2+ institutions -> participation/outcome search before more planning documents"
+  ],
+  "workflow": "screen -> candidate -> verify -> promote/follow/hold -> update tracker"
+}

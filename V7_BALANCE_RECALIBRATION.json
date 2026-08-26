@@ -1,0 +1,25 @@
+{
+  "version": "7.2",
+  "evidence_count": 83,
+  "added_this_pass": 4,
+  "source_family_counts": {
+    "국내 정책·지원기관": 9,
+    "국제·정책기관": 5,
+    "해외 대학": 16,
+    "고등교육 리딩기관": 38,
+    "국내 대학": 12,
+    "규제·품질보증기관": 3
+  },
+  "changes": [
+    "expanded regulator/QA evidence",
+    "added higher-education-specific competency evidence",
+    "cross-source corroboration gate",
+    "confidence recalculated"
+  ],
+  "next_priority": [
+    "Korean regulator/sector bodies",
+    "Korean university implementation evidence",
+    "non-EDUCAUSE international universities",
+    "measured student outcomes"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "purpose": "Prioritize future discovery from gaps in the verified corpus.",
+  "axes": {
+    "Assessment": [
+      "AI in Assessment"
+    ],
+    "Competency": [
+      "AI Curriculum & Competencies",
+      "Student AI Use & Literacy"
+    ],
+    "Governance": [
+      "AI Policy & Governance"
+    ],
+    "Transformation": [
+      "Institutional Transformation"
+    ],
+    "Student": [
+      "Student Experience & Success"
+    ],
+    "Trust": [
+      "Academic Integrity & Trust",
+      "AI Transparency & Trust"
+    ]
+  },
+  "levels": {
+    "GOOD": "4+ verified records",
+    "BUILD": "2-3 verified records",
+    "GAP": "0-1 verified records"
+  },
+  "guardrails": [
+    "gap means corpus gap, not real-world absence",
+    "do not rank institutions using evidence volume",
+    "future discovery should prioritize GAP before expanding already dense cells",
+    "only verified evidence changes the matrix"
+  ]
+}

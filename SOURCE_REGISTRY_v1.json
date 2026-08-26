@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0",
+  "source_families": [
+    {
+      "family": "Korea policy/support",
+      "priority": "A",
+      "examples": [
+        "교육부",
+        "한국대학교육협의회",
+        "KERIS",
+        "NIA",
+        "한국대학IR협의회"
+      ],
+      "discovery": "official-site search / publication boards"
+    },
+    {
+      "family": "Korea universities",
+      "priority": "A",
+      "examples": [
+        "서울대학교",
+        "고려대학교",
+        "가천대학교",
+        "대구대학교",
+        "한국방송통신대학교"
+      ],
+      "discovery": "official AI/teaching-learning/policy pages"
+    },
+    {
+      "family": "Quality assurance/regulators",
+      "priority": "A",
+      "examples": [
+        "TEQSA",
+        "QAA"
+      ],
+      "discovery": "official AI hubs / assessment / quality publications"
+    },
+    {
+      "family": "Global HE sector leaders",
+      "priority": "A",
+      "examples": [
+        "EDUCAUSE",
+        "Jisc",
+        "Advance HE",
+        "UNESCO IESALC",
+        "OECD"
+      ],
+      "discovery": "official research/publication feeds"
+    },
+    {
+      "family": "International universities",
+      "priority": "B",
+      "examples": [
+        "Stanford",
+        "Harvard",
+        "Cornell",
+        "UCLA",
+        "University of Sydney",
+        "University of Queensland"
+      ],
+      "discovery": "official teaching centers / institutional policy / news"
+    }
+  ],
+  "exclusions": [
+    "webinar/event listing unless it contains unique substantive evidence",
+    "vendor marketing",
+    "search snippets",
+    "unofficial summaries"
+  ],
+  "minimum_verification": [
+    "official primary URL reachable",
+    "institution confirmed",
+    "title confirmed",
+    "publication/update date when available",
+    "fact text supported by source",
+    "topic classification reviewed"
+  ],
+  "deduplication": [
+    "prefer report/framework over press release about same item",
+    "retain implementation case when materially distinct from policy",
+    "canonicalize title and URL"
+  ],
+  "signal_rule": {
+    "WATCH": "1–2 relevant verified items or one source family",
+    "GROWING": "3+ verified items across at least 2 source families",
+    "STRONG": "5+ verified items across at least 2 source families with implementation evidence"
+  }
+}

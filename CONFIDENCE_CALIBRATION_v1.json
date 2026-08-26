@@ -1,0 +1,16 @@
+{
+  "version": "6.8",
+  "formula": {
+    "authority": "35 max",
+    "verified": "25",
+    "official_primary": "20",
+    "url": "10",
+    "date": "10"
+  },
+  "labels": {
+    "HIGH": ">=85",
+    "MEDIUM": "65-84",
+    "LOW": "<65"
+  },
+  "interpretation": "Evidence quality/traceability score, not probability that a claim is true."
+}

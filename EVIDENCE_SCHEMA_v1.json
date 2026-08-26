@@ -1,0 +1,34 @@
+{
+  "required": [
+    "record_id",
+    "institution",
+    "group",
+    "topic",
+    "title",
+    "date",
+    "year",
+    "fact",
+    "why",
+    "url",
+    "type",
+    "importance",
+    "verification_status",
+    "source_authority",
+    "evidence_class"
+  ],
+  "authority": {
+    "A": "regulator/intergovernmental or equivalent high-authority primary source",
+    "B": "recognised HE sector/policy-support body",
+    "C": "official university primary source"
+  },
+  "status": [
+    "candidate",
+    "needs_review",
+    "verified",
+    "rejected"
+  ],
+  "separation": {
+    "evidence": "source-supported facts only",
+    "intelligence": "cross-source signal/implication generated separately"
+  }
+}

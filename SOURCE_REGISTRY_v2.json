@@ -1,0 +1,52 @@
+{
+  "version": "2.0",
+  "verified_evidence_count": 58,
+  "registry_policy": {
+    "A": "core recurring source; check first",
+    "B": "important complementary source",
+    "rule": "Registry membership is not evidence. Every discovered item must pass verification."
+  },
+  "families": [
+    {
+      "region": "Korea",
+      "sources": [
+        "교육부",
+        "한국대학교육협의회",
+        "KERIS",
+        "NIA",
+        "한국대학IR협의회",
+        "태재미래교육포럼"
+      ]
+    },
+    {
+      "region": "Quality assurance",
+      "sources": [
+        "TEQSA",
+        "QAA"
+      ]
+    },
+    {
+      "region": "HE sector leaders",
+      "sources": [
+        "EDUCAUSE",
+        "Jisc",
+        "Advance HE",
+        "UNESCO IESALC",
+        "OECD"
+      ]
+    },
+    {
+      "region": "University cases",
+      "sources": [
+        "서울대학교",
+        "고려대학교",
+        "가천대학교",
+        "Stanford University",
+        "Harvard University",
+        "Cornell University",
+        "UCLA"
+      ]
+    }
+  ],
+  "coverage_rule": "Maintain separate domestic, international-university, regulator/QA, and sector-leader discovery streams."
+}

@@ -1,0 +1,32 @@
+{
+  "identity": "record_id",
+  "fingerprint_fields": [
+    "record_id",
+    "url",
+    "fact"
+  ],
+  "diff_fields": [
+    "institution",
+    "topic",
+    "title",
+    "date",
+    "fact",
+    "url",
+    "verification_status",
+    "source_authority"
+  ],
+  "events": [
+    "ADDED",
+    "MODIFIED",
+    "STATUS_CHANGED",
+    "LINK_HEALTH_CHANGED",
+    "NO_CHANGE"
+  ],
+  "signal_refresh_if": [
+    "ADDED verified",
+    "MODIFIED verified fact/topic/authority",
+    "STATUS_CHANGED to/from verified"
+  ],
+  "never_auto_delete": "A broken/unreachable URL does not delete previously verified Evidence.",
+  "history": "Persist old/new field values, timestamp and reason."
+}

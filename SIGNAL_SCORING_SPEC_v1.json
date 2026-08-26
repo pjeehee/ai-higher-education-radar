@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "weights": {
+    "evidence_volume": 0.3,
+    "source_diversity": 0.25,
+    "source_authority": 0.2,
+    "implementation_evidence": 0.25
+  },
+  "thresholds": {
+    "STRONG": ">=70",
+    "GROWING": "45-69",
+    "WATCH": "<45"
+  },
+  "guardrails": [
+    "score is an internal intelligence prioritization metric, not a factual claim",
+    "only verified evidence may contribute",
+    "single-source repetition must not inflate source diversity",
+    "signal text and source-supported evidence remain separate"
+  ]
+}

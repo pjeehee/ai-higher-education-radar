@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "purpose": "Detect meaningful changes without automatically promoting unverified discoveries into Evidence.",
+  "priorities": [
+    {
+      "priority": "P1",
+      "area": "Korea assessment redesign",
+      "reason": "current coverage gap"
+    },
+    {
+      "priority": "P1",
+      "area": "AI governance / privacy / procurement / data",
+      "reason": "institutional transformation signal"
+    },
+    {
+      "priority": "P2",
+      "area": "student outcomes",
+      "reason": "move from adoption metrics to impact evidence"
+    },
+    {
+      "priority": "P2",
+      "area": "faculty/workforce",
+      "reason": "role and workflow transformation"
+    }
+  ],
+  "change_types": [
+    "NEW",
+    "UPDATED",
+    "IMPLEMENTED",
+    "CONTRADICTED"
+  ],
+  "alert_conditions": [
+    "signal_strength_change",
+    "new_tier_A_source",
+    "new_implementation_case",
+    "evidence_correction"
+  ],
+  "guardrail": "Unverified discoveries stay candidates and never change published signal scores."
+}

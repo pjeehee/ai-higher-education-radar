@@ -1,0 +1,23 @@
+{
+  "국립한밭대학교": {
+    "decision": "PROMOTE",
+    "level": "L2",
+    "basis": [
+      "university-wide AI basic education system",
+      "AI convergence education unit",
+      "operations/performance management"
+    ]
+  },
+  "부산외국어대학교": {
+    "decision": "FOLLOW+",
+    "level": "L1-L2 candidate",
+    "basis": [
+      "specific planned AI curriculum"
+    ],
+    "gate": "verify actual operation"
+  },
+  "순천향대학교": {
+    "decision": "REVIEW",
+    "reason": "official AI bootcamp curriculum verified, but do not attribute it to the AI basic-curriculum support project without direct provenance"
+  }
+}
