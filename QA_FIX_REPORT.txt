@@ -1,0 +1,12 @@
+QA correction summary
+- Canonical source of truth: SQLite radar.db
+- DB evidence count: 117
+- Blank source URLs: 0
+- Duplicate HTML ids: 0
+- 20-university map: final July list (Dongseo included, Soonchunhyang removed)
+- April selection result retained; July final list added as UPDATED evidence
+- Embedded evidence array removed; Flask injects DB evidence at request time
+- Hard-coded 79/72 replaced with /api/stats-driven counts
+- Outdated prototype/backend-next wording corrected
+- Visible development version labels removed
+- Automatic crawling/scheduling is NOT claimed as active
