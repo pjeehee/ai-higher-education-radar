@@ -1,0 +1,36 @@
+AI RADAR QA / SERVING CLEANUP — v4
+
+Serving path
+- Flask static folder: ROOT/web
+- Flask root route reads: ROOT/web/index.html
+- Root-level index.html: REMOVED from package
+- Render command: gunicorn backend.app:app
+- render.yaml has no alternate rootDir in the packaged service definition
+
+Source/data consistency
+- Duplicate HTML IDs: 0 PASS
+- Duplicate navigation targets: 0 PASS
+- Old TOTAL 79 / EVIDENCE 72 / LIVE BACKEND literals: 0 PASS
+- Old source-balance hard-codes: removed PASS
+- Active SQLite Evidence: 117
+- DB top institution at build time: EDUCAUSE (13)
+
+DB-backed source balance
+- Total, top institution, top source family and source-group distribution are calculated from SQLite
+- /api/stats exposes the same values
+
+Deployment-response verification
+- <meta name="radar-build" content="source-clean-v4">
+- X-Radar-Build: source-clean-v4 response header
+- /health returns build=source-clean-v4
+- Cache-Control: no-store, no-cache, must-revalidate
+
+Navigation
+- Duplicate '트렌드' item removed
+- '우선순위' remains the sole link to the priority view
+
+After deployment, verify:
+1. /health returns source-clean-v4
+2. page response header X-Radar-Build is source-clean-v4
+3. JSON/CSV/Snapshot downloads work in-browser
+4. live link-health separately

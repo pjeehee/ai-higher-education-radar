@@ -1,4 +1,5 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Higher Education AI Radar</title>
+<!doctype html><html lang="ko"><head>
+<meta name="radar-build" content="source-clean-v4"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Higher Education AI Radar</title>
 <style>
 :root{--bg:#f6f8fb;--card:#fff;--line:#e4e9f0;--text:#182033;--muted:#6c778a;--blue:#3157d5;--soft:#eef3ff;--nav:#172033;--green:#18835d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif}
@@ -179,9 +180,9 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 <div class="count">Evidence 수가 많아져도 특정 기관·기관유형에 편중되면 Signal이 왜곡될 수 있어 corpus 구성 자체를 점검합니다.</div>
 <div class="metrics" style="grid-template-columns:repeat(3,1fr)">
 <div class="box"><div class="eyebrow">TOTAL</div><div class="big" data-db-count>__DB_EVIDENCE_COUNT__</div><div class="why">verified representative corpus</div></div>
-<div class="box"><div class="eyebrow">TOP INSTITUTION</div><div class="big">13</div><div class="why">EDUCAUSE</div></div>
-<div class="box"><div class="eyebrow">TOP SOURCE FAMILY</div><div class="big">37</div><div class="why">고등교육 리딩기관</div></div>
-</div><div class="layout"><div><div class="title">기관유형 분포</div><div class="panel"><div class="sideitem"><b>고등교육 리딩기관</b><small>37건 · 47%</small></div><div class="sideitem"><b>해외 대학</b><small>16건 · 20%</small></div><div class="sideitem"><b>국내 대학</b><small>12건 · 15%</small></div><div class="sideitem"><b>국내 정책·지원기관</b><small>9건 · 11%</small></div><div class="sideitem"><b>국제·정책기관</b><small>5건 · 6%</small></div></div></div><div><div class="title">편중 방지 규칙</div><div class="panel">
+<div class="box"><div class="eyebrow">TOP INSTITUTION</div><div class="big">__TOP_INSTITUTION_COUNT__</div><div class="why">__TOP_INSTITUTION_NAME__</div></div>
+<div class="box"><div class="eyebrow">TOP SOURCE FAMILY</div><div class="big">__TOP_SOURCE_FAMILY_COUNT__</div><div class="why">__TOP_SOURCE_FAMILY_NAME__</div></div>
+</div><div class="layout"><div><div class="title">기관유형 분포</div><div class="panel">__SOURCE_GROUP_DISTRIBUTION__</div></div><div><div class="title">편중 방지 규칙</div><div class="panel">
 <div class="sideitem"><b>Independent-source bonus</b><small>이미 많은 기관보다 새로운 독립 source family의 근거를 우선</small></div>
 <div class="sideitem"><b>Dense-source penalty</b><small>동일 기관의 반복자료가 Signal 강도를 과도하게 높이지 않도록 제한</small></div>
 <div class="sideitem"><b>Domestic / international split</b><small>국내 사례와 해외 사례를 별도 관찰한 뒤 종합</small></div>
@@ -510,7 +511,7 @@ const card=x=>`<div class="row"><div class="meta"><span class="pill">${x.group}<
 
 const NAV_GROUPS={
  brief:[["today","오늘의 브리핑"],["decision","의사결정 요약"],["briefing","보고용 브리핑"]],
- signal:[["signals","변화 신호"],["priority","트렌드"],["scoring","신호 점수"],["timeline","변화 타임라인"],["evidence","신호별 근거"],["priority","우선순위"]],
+ signal:[["signals","변화 신호"],["scoring","신호 점수"],["timeline","변화 타임라인"],["evidence","신호별 근거"],["priority","우선순위"]],
  research:[["explore","자료 탐색"],["screening","자료 선별"],["batch2","추가 조사"],["researchq","조사 대기열"],["rqresults","조사 결과"],["registry","출처 목록"],["watchlist","관찰 목록"],["library","전체 자료"]],
  compare:[["compare","사례 비교"],["cases","대학 사례"],["gaps","근거 공백 분석"]],
  implementation:[["tracker","도입 현황"],["ladder","도입 단계"],["deepdive","도입 사례 분석"],["measurement","성과 측정"],["outcomes","성과 근거"],["impact","영향 추적"]],
