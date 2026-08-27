@@ -1,0 +1,79 @@
+{
+  "active_before": 117,
+  "duplicate_url_pairs_reviewed": 16,
+  "true_duplicate_pairs_removed": 13,
+  "intentional_same_source_pairs_retained": 3,
+  "active_after": 104,
+  "unique_source_urls_after": 101,
+  "remaining_duplicate_groups": [
+    {
+      "ids": "E0103,E0104",
+      "n": 2
+    },
+    {
+      "ids": "E0005,E0088",
+      "n": 2
+    },
+    {
+      "ids": "E0113,E0114",
+      "n": 2
+    }
+  ],
+  "deleted_to_survivor": {
+    "E0013": "E0062",
+    "E0018": "E0075",
+    "E0019": "E0077",
+    "E0028": "E0083",
+    "E0069": "E0079",
+    "E0031": "E0072",
+    "E0021": "E0068",
+    "E0003": "E0089",
+    "E0084": "E0001",
+    "E0053": "E0074",
+    "E0073": "E0052",
+    "E0050": "E0081",
+    "E0047": "E0080"
+  },
+  "retained_same_source_pairs": {
+    "E0103/E0104": "distinct curriculum vs governance/operations facts",
+    "E0113/E0114": "distinct curriculum vs faculty/QA facts",
+    "E0005/E0088": "broad selection fact vs selection-stage/change-history fact"
+  },
+  "critical_survivor_check": {
+    "E0001": {
+      "id": "E0001",
+      "status": "active",
+      "source_authority": "B",
+      "verification_status": "needs_review",
+      "fact": "교육부와 한국대학교육협의회가 대학 AI 활용 윤리 가이드라인 시안을 공개하고 의견수렴·보완을 진행했습니다."
+    },
+    "E0084": {
+      "id": "E0084",
+      "status": "deleted",
+      "source_authority": "A",
+      "verification_status": "verified",
+      "fact": "대교협은 대학의 효과적인 AI 활용을 지원하기 위한 대학 AI 활용 윤리 가이드라인을 공식 발간했습니다."
+    },
+    "E0052": {
+      "id": "E0052",
+      "status": "active",
+      "source_authority": "A",
+      "verification_status": "verified",
+      "fact": "2023~2026 외부검토, 직원 라운드테이블, 학생 포커스그룹과 기존 데이터를 종합해 기관 내부의 AI 정책·실행 편차가 학업기준과 학생경험에 위험이 될 수 있다고 분석합니다."
+    },
+    "E0073": {
+      "id": "E0073",
+      "status": "deleted",
+      "source_authority": "B",
+      "verification_status": "verified",
+      "fact": "QAA는 기관 간뿐 아니라 동일 기관 내 학교·모듈·교수자 수준의 GenAI 정책·실행 편차가 학업기준 보증에 위험을 줄 수 있다고 분석했습니다."
+    },
+    "E0089": {
+      "id": "E0089",
+      "status": "active",
+      "source_authority": "A",
+      "verification_status": "verified",
+      "fact": "20개 참여대학 사업단이 출범했으며 서울여대와 동국대 WISE가 사업 추진 전략과 사업 계획을 발표·공유했습니다."
+    }
+  }
+}

@@ -2,9 +2,7 @@ from flask import Flask, jsonify, request, send_from_directory, Response
 import sqlite3, os, json
 ROOT=os.path.dirname(os.path.dirname(__file__))
 DB=os.environ.get("RADAR_DB_PATH", os.path.join(ROOT,"radar.db"))
-WEB_DIR=os.path.join(ROOT,"web")
-INDEX_HTML=os.path.join(WEB_DIR,"index.html")
-app=Flask(__name__, static_folder=WEB_DIR, static_url_path="")
+app=Flask(__name__, static_folder=os.path.join(ROOT,"web"), static_url_path="")
 def q(sql,args=()):
  c=sqlite3.connect(DB); c.row_factory=sqlite3.Row; r=[dict(x) for x in c.execute(sql,args).fetchall()]; c.close(); return r
 @app.get("/api/evidence")
@@ -35,7 +33,8 @@ def stats():
  })
 @app.get("/")
 def root():
- with open(INDEX_HTML,"r",encoding="utf-8") as f: page=f.read()
+ path=os.path.join(app.static_folder,"index.html")
+ with open(path,"r",encoding="utf-8") as f: page=f.read()
  records=q("""SELECT id, institution, source_group, topic, title, evidence_date, year, fact, why, url,
                     evidence_type, importance, verification_status, evidence_class, source_authority,
                     authority_score, implementation_evidence, confidence_score, confidence_label, status
