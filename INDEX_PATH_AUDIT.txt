@@ -1,0 +1,21 @@
+INDEX.HTML REPOSITORY AUDIT
+
+Before explicit-path patch:
+- web/index.html
+
+Count: 1
+
+app.py path lines before patch:
+3: ROOT=os.path.dirname(os.path.dirname(__file__))
+5: app=Flask(__name__, static_folder=os.path.join(ROOT,"web"), static_url_path="")
+36:  path=os.path.join(app.static_folder,"index.html")
+
+After cleanup:
+- web/index.html
+Count: 1
+
+app.py explicit path lines after patch:
+5: WEB_DIR=os.path.join(ROOT,"web")
+6: INDEX_HTML=os.path.join(WEB_DIR,"index.html")
+7: app=Flask(__name__, static_folder=WEB_DIR, static_url_path="")
+38:  with open(INDEX_HTML,"r",encoding="utf-8") as f: page=f.read()
