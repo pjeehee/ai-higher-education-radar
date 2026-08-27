@@ -1,5 +1,6 @@
-<!doctype html><html lang="ko"><head>
-<meta name="radar-build" content="source-clean-v4"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Higher Education AI Radar</title>
+<!DOCTYPE html>
+<html lang="ko"><head>
+<meta content="higher-ed-ai-radar-v15.7" name="radar-build"/><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>AI Education Evidence Registry</title>
 <style>
 :root{--bg:#f6f8fb;--card:#fff;--line:#e4e9f0;--text:#182033;--muted:#6c778a;--blue:#3157d5;--soft:#eef3ff;--nav:#172033;--green:#18835d}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",sans-serif}
@@ -34,376 +35,73 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
  .secondary-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:3px}
 }
 
-</style></head><body><header><div class="logo">Higher Education <span>AI Radar</span></div></header><div class="wrap"><h1>AI 교육혁신 Intelligence</h1><div class="sub">과거 핵심자료를 먼저 축적하고, 이후 신규 공식자료를 계속 추가하는 구조입니다.</div>
-<nav class="radar-nav" aria-label="AI Radar 주요 메뉴">
-<div class="primary-tabs">
-<button class="on" data-group="brief">오늘의 브리핑</button>
-<button data-group="signal">변화 신호</button>
-<button data-group="research">자료 탐색</button>
-<button data-group="compare">사례 비교</button>
-<button data-group="implementation">도입 현황</button>
-<button data-group="university">대학 현황</button>
-<button data-group="quality">근거·품질</button>
-<button class="admin-tab" data-group="admin">관리</button>
-</div>
-<div class="secondary-tabs" id="secondaryTabs" aria-label="세부 메뉴"></div>
-</nav>
-<section id="today" class="view on"><div class="metrics"><div class="box"><div class="eyebrow">CURRENT SIGNAL</div><div class="big">AI 기초역량 → 평가 재설계 → 대학 차원의 거버넌스로 확장</div></div><div class="box"><div class="eyebrow">BACKFILLED EVIDENCE</div><div class="num" id="evidenceCount">—</div></div><div class="box"><div class="eyebrow">COVERAGE</div><div class="num" id="coverageYears">—</div></div><div class="box"><div class="eyebrow">UNVERIFIED SHOWN</div><div class="num">0</div></div></div>
-<div class="layout"><div><div class="title">최근 + 중요 자료</div><div id="brief" class="feed"></div></div><div><div class="title">빠른 탐색</div><div class="panel"><div class="sideitem"><b>2026 정책 변화</b><small>최근 국내외 제도·정책</small></div><div class="sideitem"><b>AI 평가</b><small>Assessment redesign 사례</small></div><div class="sideitem"><b>AI 교육과정</b><small>Literacy · competency · curriculum</small></div><div class="sideitem"><b>대학 사례</b><small>국내 / 해외 실제 적용</small></div></div></div></div></section>
+</style></head><body><header><div class="logo">AI Education <span>Evidence Registry</span></div></header><div class="wrap"><h1>AI Education Evidence Registry</h1><div class="sub">국내외 고등교육의 최신 AI 관련 정보를 모아 핵심 변화를 정리하고, KDIS에서 참고·검토할 포인트까지 연결합니다. Evidence Registry는 이 Radar의 근거 기반입니다.</div>
+<nav aria-label="AI Radar 주요 메뉴" class="radar-nav"><div class="primary-tabs" id="mainTabs"><button class="on" data-v="today">최신 AI 동향</button><button data-v="signals">변화 신호</button><button data-v="evidence">신호별 근거</button><button data-v="library">Evidence Library</button><button data-v="tracker">Deep Dive · 20개교</button><button data-v="ladder">판정 기준</button><button data-v="gaps">근거 공백</button><button data-v="scoring">Signal 점수 산정</button></div></nav>
+<section class="view on" id="today"><div class="metrics"><div class="box"><div class="eyebrow">LATEST UPDATE</div><div class="big" id="latestUpdate">최신 AI 고등교육 Evidence 업데이트</div></div><div class="box"><div class="eyebrow">ACTIVE EVIDENCE</div><div class="num" id="evidenceCount">__DB_EVIDENCE_COUNT__</div></div><div class="box"><div class="eyebrow">COVERAGE</div><div class="num" id="coverageYears">__DB_COVERAGE_YEARS__</div></div><div class="box"><div class="eyebrow">UNVERIFIED SHOWN</div><div class="num">0</div></div></div>
+<div class="box" style="margin:0 0 14px"><div class="eyebrow">PURPOSE</div><div class="why"><b>그날·그달 새로 나온 고등교육 AI 정보를 빠르게 모아</b> 무엇이 달라지고 있는지 정리하고, <b>KDIS에서 참고하거나 접목해 볼 지점</b>을 함께 보여줍니다. Evidence는 공식 원문에서 확인된 사실이며, Signal·Ladder·Scoring은 이를 읽기 위한 분석 도구입니다. 20개교 분석은 전체 Radar 안의 하나의 Deep Dive입니다.</div></div><div class="layout"><div><div class="title">최신 Evidence · KDIS 연결</div><div class="feed" id="brief"></div></div><div><div class="title">빠른 탐색</div><div class="panel"><div class="sideitem"><b>2026 정책 변화</b><small>최근 국내외 제도·정책</small></div><div class="sideitem"><b>AI 평가</b><small>Assessment redesign 사례</small></div><div class="sideitem"><b>AI 교육과정</b><small>Literacy · competency · curriculum</small></div><div class="sideitem"><b>대학 사례</b><small>국내 / 해외 실제 적용</small></div></div></div></div></section>
 
-
-<section id="decision" class="view">
-<div class="title">Decision Brief</div>
-<div class="count">자료를 읽는 데서 끝내지 않고, 현재 근거가 어떤 의사결정 질문으로 이어지는지 한 화면에서 봅니다.</div>
-<div class="feed">
-<div class="row"><div class="meta"><span class="pill core">HIGH CONFIDENCE</span><span>Assessment</span></div><h3>평가정책은 ‘AI 허용 여부’보다 평가설계 자체를 다뤄야 하는가?</h3><p>복수의 고등교육 리딩기관과 대학 사례에서 process/authentic assessment, 학습성과 정렬, 명시적 AI 사용조건이 반복됩니다.</p><div class="why"><b>검토 포인트:</b> 과제별 AI policy · 학습과정 증거 · oral/dialogic assessment · 교수자 지원</div></div>
-<div class="row"><div class="meta"><span class="pill core">HIGH CONFIDENCE</span><span>AI Competency</span></div><h3>AI literacy를 선택적 교육이 아니라 보편적 학습성과로 볼 것인가?</h3><p>학생·교수자 competency framework와 국내 대학 AI 기본교육이 동시에 확대되고 있습니다.</p><div class="why"><b>검토 포인트:</b> 학생 기본역량 · 전공별 적용 · 교수자 역량 · 윤리·검증 역량</div></div>
-<div class="row"><div class="meta"><span class="pill">RISING</span><span>Institution</span></div><h3>AI 전략의 범위를 교수학습에서 데이터·업무·조직 운영까지 넓힐 것인가?</h3><p>2026년 자료에서는 institutional transformation, digital maturity, workforce redesign가 빠르게 부상합니다.</p><div class="why"><b>검토 포인트:</b> 데이터 거버넌스 · 업무 재설계 · 조직 AI 역량 · 성숙도 진단</div></div>
-<div class="row"><div class="meta"><span class="pill">WATCH</span><span>Student Experience</span></div><h3>AI 도입 효과를 무엇으로 측정할 것인가?</h3><p>학생지원·진로·학습경험에서 AI 활용이 늘지만, 도입 자체보다 measurable impact와 outcomes를 요구하는 흐름이 나타납니다.</p><div class="why"><b>검토 포인트:</b> 학생경험 · 지원효율 · persistence/completion · 신뢰·접근성</div></div>
-</div>
-<div class="box" style="margin-top:14px"><div class="eyebrow">INTERPRETATION RULE</div><div class="why">Decision Brief는 공식자료의 직접 문구가 아니라 Radar가 복수 근거를 종합해 제시하는 검토 질문입니다. 근거는 ‘신호별 근거’에서 원문 단위로 확인할 수 있습니다.</div></div>
-</section>
-<section id="signals" class="view">
-  <div class="title">변화 신호 — 자료를 읽지 않아도 흐름부터 파악</div>
-  <div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-    <div class="box"><div class="eyebrow">ASSESSMENT</div><div class="big">AI 대응이 ‘부정행위 탐지’에서 ‘평가 재설계’로 이동</div><div class="why">프로세스·구술·포트폴리오·authentic assessment가 함께 논의되는 흐름</div></div>
-    <div class="box"><div class="eyebrow">CURRICULUM</div><div class="big">AI 활용법보다 ‘학생 AI 역량’ 자체가 교육목표로 이동</div><div class="why">AI literacy · competency framework · 전교생 기초교육으로 확장</div></div>
-    <div class="box"><div class="eyebrow">INSTITUTION</div><div class="big">개별 도구 도입에서 대학 차원의 전략·거버넌스로 확대</div><div class="why">데이터·정책·교수자 역량·조직 운영까지 연결되는 흐름</div></div>
-  <div class="box"><div class="eyebrow">INSTITUTIONAL TRANSFORMATION</div><div class="big">AI가 교수학습을 넘어 조직·업무·데이터 전략으로 확장</div><div class="why">AI enablement · institutional intelligence · workforce transformation이 새로운 추적 영역</div></div></div>
-  <div class="layout">
-    <div>
-      <div class="title">주목할 변화와 질문</div>
-      <div class="feed">
-        <div class="row"><h3>1. 평가 가이드라인을 과제 단위까지 구체화해야 하는가?</h3><p>해외 고등교육에서는 생성형 AI를 전제로 평가 유형 자체를 다시 설계하는 논의가 강화되고 있습니다.</p></div>
-        <div class="row"><h3>2. 학생 AI 역량을 별도 교육목표로 정의할 필요가 있는가?</h3><p>국제 프레임워크와 국내 대학 정책 모두 AI 기초역량을 보편적 학습성과로 다루는 방향이 보입니다.</p></div>
-        <div class="row"><h3>3. AI 정책을 교수·학생 사용규칙만으로 볼 것인가?</h3><p>최근 자료는 데이터, 인프라, 직원 업무, 교수자 개발과 조직 거버넌스까지 범위를 넓히고 있습니다.</p></div><div class="row"><h3>4. AI가 대학의 업무와 조직 역할 자체를 어떻게 바꾸는가?</h3><p>최근 고등교육 자료는 AI를 단순 자동화보다 업무 재설계, 데이터 기반 의사결정, 직원 역량과 조직 변화의 문제로 확장해 다루고 있습니다.</p></div>
-      </div>
-    </div>
-    <div>
-      <div class="title">Radar 분류 원칙</div>
-      <div class="panel">
-        <div class="sideitem"><b>Evidence</b><small>공식 원문에서 직접 확인된 사실</small></div>
-        <div class="sideitem"><b>Signal</b><small>복수 근거에서 반복되는 변화 방향</small></div>
-        <div class="sideitem"><b>Implication</b><small>고등교육 관점에서 검토할 질문</small></div>
-        <div class="sideitem"><b>Watch</b><small>아직 근거가 적어 추적이 필요한 영역</small></div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="explore" class="view"><div class="title">자료 탐색</div><div class="controls"><input id="q" placeholder="제목·기관·내용 검색"><select id="year"><option value="">전체 연도</option></select><select id="group"><option value="">전체 기관유형</option></select><select id="topic"><option value="">전체 주제</option></select><select id="sort"><option value="new">최신순</option><option value="old">오래된순</option><option value="core">중요자료 우선</option></select></div><div id="count" class="count"></div><div id="results" class="feed"></div></section>
-<section id="screening" class="view">
-<div class="title">Institution Screening Engine</div>
-<div class="count">나머지 참여대학을 동일한 기준으로 빠르게 선별하고, L2 이상으로 올릴 만한 공식 근거가 있는 대학을 우선 조사합니다.</div>
-
-<div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-<div class="box"><div class="eyebrow">SCREEN 1</div><div class="big">Official source</div><div class="why">대학 공식 페이지/문서 존재</div></div>
-<div class="box"><div class="eyebrow">SCREEN 2</div><div class="big">Implementation</div><div class="why">교과·조직·교수개발 실제 근거</div></div>
-<div class="box"><div class="eyebrow">SCREEN 3</div><div class="big">Participation</div><div class="why">수강·이수·교수 참여 데이터</div></div>
-<div class="box"><div class="eyebrow">SCREEN 4</div><div class="big">Outcome</div><div class="why">학습·평가·업무 성과</div></div>
-</div>
-
-<table><thead><tr><th>판정</th><th>조건</th><th>조치</th></tr></thead><tbody>
-<tr><td><span class="pill core">PROMOTE</span></td><td>공식 L2 implementation Evidence 확인</td><td>Implementation Tracker에 추가</td></tr>
-<tr><td><span class="pill">FOLLOW</span></td><td>계획은 있으나 운영 여부 불명확</td><td>변경감지 Watchlist 유지</td></tr>
-<tr><td><span class="pill">HOLD</span></td><td>선정 사실 외 공식 구현근거 부족</td><td>L1 유지</td></tr>
-<tr><td><span class="pill">REVIEW</span></td><td>날짜·범위·실행상태 충돌</td><td>검증 큐로 이동</td></tr>
-</tbody></table>
-
-<div class="layout">
-<div><div class="title">Screening rubric</div><div class="panel">
-<div class="sideitem"><b>Curriculum</b><small>실제 과목·마이크로전공·교육모형</small></div>
-<div class="sideitem"><b>Faculty development</b><small>교수자 AI 역량 프로그램</small></div>
-<div class="sideitem"><b>Governance</b><small>전담조직·규정·지침·성과관리</small></div>
-<div class="sideitem"><b>Operations</b><small>실제 운영 공지·수강·참여 Evidence</small></div>
-</div></div>
-<div><div class="title">자동 우선순위</div><div class="panel">
-<div class="sideitem"><b>P1</b><small>공식 운영근거 + 기관별 고유 실행모형</small></div>
-<div class="sideitem"><b>P2</b><small>개발계획은 있으나 운영근거 부족</small></div>
-<div class="sideitem"><b>P3</b><small>선정 외 추가 공식자료 미확인</small></div>
-<div class="sideitem"><b>Outcome First</b><small>L2 이상 대학은 참여·성과 Evidence를 우선 탐색</small></div>
-</div></div></div>
-
-<div class="box"><div class="eyebrow">ANTI-INFLATION RULE</div><div class="why">선정대학 20개를 모두 자동으로 L2로 올리지 않습니다. 기관별 공식 implementation Evidence가 확인된 대학만 단계가 올라갑니다.</div></div>
-</section><section id="tracker" class="view"><div class="title">Korea Implementation Tracker</div>
-<div class="count">20개 대학을 같은 기준으로 추적하고, 선정·계획·운영·참여·성과 단계를 분리합니다.</div>
-<table><thead><tr><th>대학</th><th>현재 단계</th><th>공식 Evidence</th><th>다음 Gate</th></tr></thead><tbody>
-<tr><td><b>서울여자대학교</b></td><td><span class="pill core">L2+</span></td><td>교육모형 · 전담기능 · AI 프로젝트형 교육 운영</td><td>참여·학습성과</td></tr>
-<tr><td><b>동국대학교 WISE</b></td><td><span class="pill core">L2+</span></td><td>교육체계 · 사업단 · 성과관리 · 확산전략</td><td>참여·학습성과</td></tr>
-<tr><td><b>세종대학교</b></td><td><span class="pill core">L2</span></td><td>AI기초/전공심화 · 24개 교과 개발계획 · 협력체계</td><td>실제 개설·수강</td></tr>
-<tr><td><b>덕성여자대학교</b></td><td><span class="pill core">L2</span></td><td>AI교양·소단위전공 · 교수지원 · K-MOOC · 역량진단·환류</td><td>실제 운영·참여데이터</td></tr>
-<tr><td><b>나머지 참여대학</b></td><td><span class="pill">L1</span></td><td>2026 사업 선정</td><td>L2 공식 근거 탐색</td></tr>
-</tbody></table>
-<div class="feed"><div class="row"><h3>Duksung deep dive</h3><p>전담조직·교과목·교수지원·역량진단·환류 구조를 기관 공식자료에서 확인.</p></div>
-<div class="row"><h3>Participation gate</h3><p>“운영 중” 다음 단계는 수강인원·참여자·실제 사용데이터가 있어야 진입.</p></div>
-<div class="row"><h3>Outcome separation</h3><p>만족도·참여율과 학습성과·평가성과를 분리해 저장하도록 정의.</p></div>
-<div class="row"><h3>Next-batch research</h3><p>나머지 16개 대학을 L2 공식근거 유무부터 빠르게 스크리닝하도록 조사 큐 갱신.</p></div></div>
-</section><section id="batch2" class="view"><div class="title">Institution Batch 2</div>
-<div class="count">두 선도 사례 다음으로 공식 대학 원문에서 구체적 교육과정·조직 구조가 확인되는 대학을 확장합니다.</div>
-<table><thead><tr><th>대학</th><th>Level</th><th>확인 Evidence</th><th>Outcome gate</th></tr></thead><tbody>
-<tr><td><b>서울여자대학교</b></td><td><span class="pill core">L2+</span></td><td>교양-마이크로전공 통합모형 + 전담기능</td><td>L3 참여데이터 필요</td></tr>
-<tr><td><b>동국대학교 WISE</b></td><td><span class="pill core">L2+</span></td><td>전교생 체계 + 사업단 + 성과관리</td><td>L3 참여데이터 필요</td></tr>
-<tr><td><b>세종대학교</b></td><td><span class="pill core">L2</span></td><td>AX혁신원 협력체계 + AI기초/전공심화 + 24개 교과 개발계획</td><td>실제 개설·수강 데이터 필요</td></tr>
-</tbody></table>
-<div class="feed"><div class="row"><h3>Batch expansion</h3><p>세종대를 기관별 L2 추적대상으로 추가.</p></div>
-<div class="row"><h3>Curriculum granularity</h3><p>‘AI 교육 추진’ 대신 교육모형·교과 수·마이크로전공 등 구현 단위를 별도 기록.</p></div>
-<div class="row"><h3>Planned vs operating</h3><p>개발계획과 실제 개설·운영을 구분하는 상태 필드를 추가하도록 사양화.</p></div>
-<div class="row"><h3>Outcome search gate</h3><p>L2 대학부터 수강인원·교수자 참여·학습성과·평가 변화 자료를 우선 탐색.</p></div></div></section><section id="deepdive" class="view"><div class="title">Institution Implementation Deep Dive</div>
-<div class="count">20개 선정대학 가운데 공식 기관자료에서 실제 실행 구조가 확인되는 대학부터 Implementation Ladder를 올립니다.</div>
-<table><thead><tr><th>대학</th><th>현재 Level</th><th>확인된 실행</th><th>다음 확인</th></tr></thead><tbody>
-<tr><td><b>서울여자대학교</b></td><td><span class="pill core">L2</span></td><td>AI 교과목 개발 · 교수자 역량 프로그램 · 온라인 콘텐츠 · 성과지표 관리 전담기능</td><td>실제 교과목·참여 데이터</td></tr>
-<tr><td><b>동국대학교 WISE</b></td><td><span class="pill core">L2</span></td><td>전교생 AI 기본교육체계 · 사업단 · 교육과정 운영 · 성과관리 · 확산전략</td><td>수강·교수자 참여·성과 데이터</td></tr>
-<tr><td><b>나머지 참여대학</b></td><td><span class="pill">L1</span></td><td>사업 선정 확인</td><td>기관별 L2 공식자료 탐색</td></tr>
-</tbody></table>
-<div class="feed"><div class="row"><h3>Institution evidence</h3><p>서울여대와 동국대 WISE를 sector 발표와 분리해 기관 공식자료로 검증.</p></div>
-<div class="row"><h3>Ladder promotion</h3><p>두 대학을 선정(L1)에서 실제 운영구조 확인(L2)으로 승격.</p></div>
-<div class="row"><h3>Outcome gate</h3><p>채용·계획·사업단 존재만으로 L3/L4로 올리지 않음. 실제 참여·성과 수치가 필요.</p></div>
-<div class="row"><h3>Next institution batch</h3><p>나머지 대학을 동일 기준으로 조사하되 공식 교과목·교수개발·전담조직 Evidence가 있는 곳부터 확장.</p></div></div>
-</section><section id="koreamap" class="view"><div class="title">2026 AI 기본교육과정 · 20개 대학 Map</div>
-<div class="count">선정 사실과 실제 구현 Evidence를 분리해 대학별로 추적하기 위한 기준 목록입니다.</div><div class="box" style="margin:10px 0 14px"><div class="eyebrow">UPDATED · 2026.07.14</div><div class="why"><b>최종 참여대학 명단 반영:</b> 4월 선정평가 결과의 순천향대학교가 제외되고 동서대학교가 최종 참여대학에 포함되었습니다. 4월 결과와 7월 최종 확정은 별도 Evidence로 보존합니다.</div></div><div id="uni20"></div>
-<div class="box"><div class="eyebrow">TRACKING RULE</div><div class="why">‘선정 대학’이라는 사실만으로 해당 대학의 교육과정이 이미 운영 중이라고 표시하지 않습니다. 대학별 공식 원문이 확인될 때 implementation 상태를 별도로 올립니다.</div></div></section><section id="ladder" class="view"><div class="title">Korea Implementation Ladder</div><div class="count">국내 AI 교육혁신을 발표 건수가 아니라 실행 성숙도에 따라 추적합니다.</div>
-<table><thead><tr><th>Level</th><th>Evidence</th><th>Radar 해석</th></tr></thead><tbody>
-<tr><td>L0</td><td>정책·사업 발표</td><td>방향성</td></tr><tr><td>L1</td><td>대학 선정·예산·전담체계</td><td>채택</td></tr>
-<tr><td>L2</td><td>교육과정·가이드·교수개발 실제 운영</td><td>구현</td></tr><tr><td>L3</td><td>학생·교수 참여/활용 데이터</td><td>사용</td></tr>
-<tr><td>L4</td><td>학습·평가·업무 성과 측정</td><td>Outcome</td></tr><tr><td>L5</td><td>반복평가 후 제도·교육과정 개선</td><td>지속적 전환</td></tr>
-</tbody></table><div class="box"><div class="eyebrow">NEXT WAVE</div><div class="why">20개 대학 중 공식 추진계획·교과목·교수자 프로그램이 공개된 대학부터 L2 근거를 수집하고, 이후 참여·성과 데이터(L3–L4)를 별도 조사합니다.</div></div></section><section id="korea" class="view"><div class="title">Korea Sector Lens</div>
-<div class="count">국내 대학 개별 사례와 교육부·대교협 등 sector-level 움직임을 분리해서 보고, 다시 연결해 해석합니다.</div>
-<div class="feed">
-<div class="row"><div class="meta"><span class="pill core">SECTOR</span></div><h3>국가·대교협 AI 기본교육 체계</h3><p>학생 기본역량, 비공학 전공 연계, 교수자 역량, 대학 내 추진체계, 대학 간 확산을 하나의 정책사업으로 연결.</p></div>
-<div class="row"><div class="meta"><span class="pill core">ETHICS</span></div><h3>대학 AI 활용 윤리 가이드</h3><p>개별 대학을 넘어 국내 고등교육 sector 차원의 AI 윤리 가이드가 별도 자료로 공식화됨.</p></div>
-<div class="row"><div class="meta"><span class="pill">READINESS</span></div><h3>대학 리더십의 AX 준비도</h3><p>총장 조사와 정책자료를 통해 AI 전환의 필요성뿐 아니라 재정·준비도 차이를 별도 추적.</p></div>
-<div class="row"><div class="meta"><span class="pill">IMPLEMENTATION</span></div><h3>대학 실제 시행</h3><p>대구대처럼 가이드라인을 시범운영 후 전면 시행으로 연결하는 구현 사례를 sector 정책과 분리해 축적.</p></div>
-</div>
-<div class="box"><div class="eyebrow">ANALYSIS RULE</div><div class="why">국내 정책 발표를 곧바로 대학 현장의 실제 실행으로 간주하지 않습니다. Sector policy → institutional adoption → implementation → outcome을 각각 별도 Evidence로 추적합니다.</div></div></section><section id="corroboration" class="view"><div class="title">Cross-Source Corroboration</div>
-<div class="count">하나의 기관이 반복해서 말하는 신호와 서로 독립된 기관유형에서 반복 확인되는 신호를 구분합니다.</div>
-<div id="corrTable"></div>
-<div class="box" style="margin-top:14px"><div class="eyebrow">STRONG SIGNAL RULE</div><div class="why">강한 신호는 Evidence 건수만으로 결정하지 않습니다. 서로 독립된 source family의 반복 확인과 실제 implementation evidence가 함께 있어야 합니다.</div></div></section><section id="balance" class="view"><div class="title">Source Balance Audit</div>
-<div class="count">Evidence 수가 많아져도 특정 기관·기관유형에 편중되면 Signal이 왜곡될 수 있어 corpus 구성 자체를 점검합니다.</div>
+<section class="view" id="signals">
+<div class="title">변화 신호 — Registry 전체 Evidence에서 반복되는 방향</div>
 <div class="metrics" style="grid-template-columns:repeat(3,1fr)">
-<div class="box"><div class="eyebrow">TOTAL</div><div class="big" data-db-count>__DB_EVIDENCE_COUNT__</div><div class="why">verified representative corpus</div></div>
-<div class="box"><div class="eyebrow">TOP INSTITUTION</div><div class="big">__TOP_INSTITUTION_COUNT__</div><div class="why">__TOP_INSTITUTION_NAME__</div></div>
-<div class="box"><div class="eyebrow">TOP SOURCE FAMILY</div><div class="big">__TOP_SOURCE_FAMILY_COUNT__</div><div class="why">__TOP_SOURCE_FAMILY_NAME__</div></div>
-</div><div class="layout"><div><div class="title">기관유형 분포</div><div class="panel">__SOURCE_GROUP_DISTRIBUTION__</div></div><div><div class="title">편중 방지 규칙</div><div class="panel">
-<div class="sideitem"><b>Independent-source bonus</b><small>이미 많은 기관보다 새로운 독립 source family의 근거를 우선</small></div>
-<div class="sideitem"><b>Dense-source penalty</b><small>동일 기관의 반복자료가 Signal 강도를 과도하게 높이지 않도록 제한</small></div>
-<div class="sideitem"><b>Domestic / international split</b><small>국내 사례와 해외 사례를 별도 관찰한 뒤 종합</small></div>
-<div class="sideitem"><b>Institution ≠ sector</b><small>한 대학 사례를 전체 고등교육 흐름으로 일반화하지 않음</small></div>
-</div></div></div></section><section id="confidence" class="view"><div class="title">Evidence Confidence Calibration</div>
-<div class="count">모든 verified Evidence가 같은 강도의 근거는 아니므로 출처 권위·원문성·검증상태·메타데이터 완전성을 분리해 표시합니다.</div>
-<table><thead><tr><th>등급</th><th>의미</th><th>사용</th></tr></thead><tbody>
-<tr><td><span class="pill core">HIGH</span></td><td>공식 원문 + 검증 + 충분한 provenance</td><td>Signal과 Brief의 핵심 근거</td></tr>
-<tr><td><span class="pill">MEDIUM</span></td><td>공식성은 높지만 범위·메타데이터 일부 제한</td><td>보조·교차검증 근거</td></tr>
-<tr><td><span class="pill">LOW</span></td><td>검증 또는 provenance 보강 필요</td><td>공개 Intelligence에 직접 사용하지 않음</td></tr>
-</tbody></table><div id="confidenceSummary" class="feed" style="margin-top:12px"></div>
-<div class="box"><div class="eyebrow">CALIBRATION RULE</div><div class="why">Confidence는 내용이 ‘맞을 확률’을 임의로 추정한 값이 아니라 Radar 내부의 근거 품질·추적가능성 지표입니다.</div></div></section><section id="measurement" class="view"><div class="title">AI Value & Measurement Layer</div>
-<div class="count">AI 도입 자체와 실제 가치 창출을 분리해 추적하고, “무엇을 측정해야 하는가”를 운영지표로 연결합니다.</div>
-<div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-<div class="box"><div class="eyebrow">ADOPTION</div><div class="big">사용</div><div class="why">users · licenses · frequency</div></div>
-<div class="box"><div class="eyebrow">CAPABILITY</div><div class="big">역량</div><div class="why">literacy · training · confidence</div></div>
-<div class="box"><div class="eyebrow">OUTCOME</div><div class="big">성과</div><div class="why">learning · support · workload</div></div>
-<div class="box"><div class="eyebrow">VALUE</div><div class="big">가치</div><div class="why">quality · time · cost · risk</div></div></div>
-<table><thead><tr><th>영역</th><th>약한 지표</th><th>더 강한 지표</th><th>확인 질문</th></tr></thead><tbody>
-<tr><td>교육</td><td>AI 사용률</td><td>학습증거·평가품질·피드백 효과</td><td>학습이 실제로 개선됐는가?</td></tr>
-<tr><td>학생지원</td><td>챗봇 이용건수</td><td>해결률·접근성·학생경험·지원성과</td><td>학생에게 더 나은 결과가 있었는가?</td></tr>
-<tr><td>교직원</td><td>교육 이수자 수</td><td>업무시간·품질·역할역량·재작업</td><td>업무방식이 실제로 개선됐는가?</td></tr>
-<tr><td>기관</td><td>AI 도구 수</td><td>비용·위험·ROI·전략목표 기여</td><td>투자 가치가 검증되는가?</td></tr>
-</tbody></table>
-<div class="box" style="margin-top:14px"><div class="eyebrow">MEASUREMENT GAP</div><div class="why">AI 전략이 존재하거나 사용량이 증가하는 것만으로 성공으로 분류하지 않습니다. Outcome과 Value 근거가 없는 경우 Radar에서는 “도입 신호”와 “성과 신호”를 별도로 표시합니다.</div></div></section><section id="outcomes" class="view"><div class="title">Outcome Evidence Layer</div>
-<div class="count">AI 도입 여부가 아니라 실제 학생·교육·업무 결과에 어떤 변화가 있는지를 별도로 추적합니다.</div>
-<div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-<div class="box"><div class="eyebrow">LEARNING</div><div class="big">학습</div><div class="why">learning evidence · mastery · quality</div></div>
-<div class="box"><div class="eyebrow">EXPERIENCE</div><div class="big">경험</div><div class="why">student support · consistency · access</div></div>
-<div class="box"><div class="eyebrow">EMPLOYABILITY</div><div class="big">진로</div><div class="why">workforce preparation · capability</div></div>
-<div class="box"><div class="eyebrow">WORK</div><div class="big">업무</div><div class="why">workload · productivity · role change</div></div>
-</div>
+<div class="box"><div class="eyebrow">ASSESSMENT</div><div class="big">부정행위 탐지에서 평가 재설계로 이동</div><div class="why">프로세스·구술·포트폴리오·authentic assessment</div></div>
+<div class="box"><div class="eyebrow">AI COMPETENCY</div><div class="big">AI 역량 자체가 교육목표로 이동</div><div class="why">AI literacy · competency · 전교생 기초교육</div></div>
+<div class="box"><div class="eyebrow">INSTITUTION</div><div class="big">도구 도입에서 대학 차원의 전략·조직 변화로 확대</div><div class="why">정책·데이터·교수자 역량·업무·거버넌스</div></div></div>
+<div class="layout">
+<div>
+<div class="title">주목할 변화와 질문</div>
 <div class="feed">
-<div class="row"><h3>Adoption ≠ Outcome</h3><p>AI 사용률·라이선스 수·도구 배포량은 결과지표와 분리합니다.</p></div>
-<div class="row"><h3>Measured evidence first</h3><p>설문·평가결과·학생지원 지표·업무지표처럼 측정된 근거를 우선 추적합니다.</p></div>
-<div class="row"><h3>Equity check</h3><p>평균 효과뿐 아니라 접근성·학생집단별 차이·지원 격차를 별도 검토합니다.</p></div>
-<div class="row"><h3>Human value check</h3><p>효율성 향상과 함께 critical thinking, human interaction, judgement가 약화되지 않는지 추적합니다.</p></div>
+<div class="row"><h3>1. 평가를 AI 시대에 맞게 다시 설계해야 하는가?</h3><p>평가 유형과 학습성과 정렬 자체를 재검토하는 흐름이 강해지고 있습니다.</p></div>
+<div class="row"><h3>2. 학생 AI 역량을 공통 학습성과로 볼 것인가?</h3><p>국제 프레임워크와 국내 대학 모두 AI 기초역량을 보편적 교육목표로 다루기 시작했습니다.</p></div>
+<div class="row"><h3>3. AI 정책을 대학 운영·거버넌스까지 확장할 것인가?</h3><p>정책·데이터·교수자 역량·업무 재설계까지 논의 범위가 넓어지고 있습니다.</p></div>
 </div>
-<div class="box"><div class="eyebrow">EVIDENCE STANDARD</div><div class="why">“AI가 효과적이다”라는 일반화는 허용하지 않습니다. 어떤 대상·맥락·지표에서 어떤 결과가 관찰됐는지를 확인할 수 있는 자료만 Outcome 근거로 사용합니다.</div></div></section><section id="impact" class="view"><div class="title">Evidence → Signal Impact Trace</div>
-<div class="count">새 Evidence가 들어왔을 때 어떤 신호·Gap·브리핑 문장을 바꾸는지 역추적할 수 있게 합니다.</div>
-<div class="feed">
-<div class="row"><div class="meta"><span class="pill core">EVIDENCE</span></div><h3>Verified record</h3><p>원문 fact · provenance · authority를 보존합니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">MAP</span></div><h3>Topic → Signal mapping</h3><p>Evidence topic이 어느 Signal 계산에 기여하는지 명시적으로 연결합니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">DELTA</span></div><h3>Before / After score</h3><p>새 자료 반영 전후 점수와 상태 변화가 있을 때만 기록합니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">BRIEF</span></div><h3>Decision-brief impact</h3><p>브리핑 문장이 바뀌었다면 어떤 Evidence 변화 때문인지 추적합니다.</p></div>
 </div>
-<table><thead><tr><th>변화</th><th>재계산</th><th>자동 게시</th><th>검토</th></tr></thead><tbody>
-<tr><td>Verified Evidence 추가</td><td>Signal + Gap</td><td>가능</td><td>큰 상태변화 시 검토</td></tr>
-<tr><td>fact/topic 수정</td><td>Signal + Brief</td><td>조건부</td><td>필수</td></tr>
-<tr><td>Authority 변경</td><td>Signal score</td><td>조건부</td><td>필수</td></tr>
-<tr><td>링크 상태만 변경</td><td>없음</td><td>상태표시만</td><td>원문 재확인 큐</td></tr>
-</tbody></table>
-<div class="box" style="margin-top:14px"><div class="eyebrow">TRACEABILITY</div><div class="why">최종 Intelligence 문장에서 원 Evidence까지 거꾸로 내려갈 수 있어야 하며, 근거가 사라지면 해당 해석도 재검토 대상으로 표시합니다.</div></div></section><section id="changes" class="view"><div class="title">Snapshot Change Detection</div>
-<div class="count">수집 주기마다 이전 snapshot과 현재 verified corpus를 비교해 무엇이 실제로 바뀌었는지 기록합니다.</div>
-<div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-<div class="box"><div class="eyebrow">ADDED</div><div class="big">+</div><div class="why">새 verified Evidence</div></div>
-<div class="box"><div class="eyebrow">MODIFIED</div><div class="big">Δ</div><div class="why">검증된 메타데이터·fact 변경</div></div>
-<div class="box"><div class="eyebrow">REMOVED</div><div class="big">−</div><div class="why">삭제 대신 상태·이력 보존</div></div>
-<div class="box"><div class="eyebrow">SIGNAL IMPACT</div><div class="big">→</div><div class="why">변화가 신호에 미친 영향</div></div></div>
-<div class="feed">
-<div class="row"><h3>Record fingerprint</h3><p>record_id + canonical source URL + 핵심 fact를 기준으로 변경 후보를 식별합니다.</p></div>
-<div class="row"><h3>Field-level diff</h3><p>제목·날짜·fact·URL·verification status 중 실제로 달라진 필드만 기록합니다.</p></div>
-<div class="row"><h3>Impact gate</h3><p>verified 변경만 Signal Score, Gap Matrix, Executive Brief 재계산을 촉발합니다.</p></div>
-<div class="row"><h3>Correction history</h3><p>수정 전 값을 보존해 언제 무엇이 왜 바뀌었는지 추적할 수 있게 합니다.</p></div>
+<div>
+<div class="title">Registry 분석 단위</div>
+<div class="panel">
+<div class="sideitem"><b>Evidence</b><small>공식 원문에서 직접 확인된 사실</small></div>
+<div class="sideitem"><b>Signal</b><small>복수 근거에서 반복되는 변화 방향</small></div>
+<div class="sideitem"><b>Implication</b><small>고등교육 관점에서 검토할 질문</small></div>
+<div class="sideitem"><b>Watch</b><small>아직 근거가 적어 추적이 필요한 영역</small></div>
 </div>
-<div class="box"><div class="eyebrow">SAFETY RULE</div><div class="why">원문 링크가 사라졌다는 이유만으로 기존 Evidence를 자동 삭제하지 않습니다. link-health 문제와 사실의 검증상태를 별도로 관리합니다.</div></div></section><section id="runsim" class="view"><div class="title">Scheduled Run Simulator</div><div class="count">실제 서버 연결 전에 한 번의 자동수집 주기가 어떤 상태 전이를 거치는지 테스트합니다.</div>
-<div class="metrics" style="grid-template-columns:repeat(4,1fr)"><div class="box"><div class="eyebrow">DISCOVER</div><div class="big">Candidate</div><div class="why">공식 출처 신규/변경 URL</div></div><div class="box"><div class="eyebrow">VERIFY</div><div class="big">Gate</div><div class="why">metadata · claim · dedup</div></div><div class="box"><div class="eyebrow">PUBLISH</div><div class="big">Verified</div><div class="why">Evidence만 corpus 반영</div></div><div class="box"><div class="eyebrow">REFRESH</div><div class="big">Signal</div><div class="why">점수·Gap·Brief 재계산</div></div></div>
-<table><thead><tr><th>단계</th><th>입력</th><th>자동 처리</th><th>출력</th></tr></thead><tbody>
-<tr><td>01 Discovery</td><td>Source Registry</td><td>URL·제목·fingerprint 비교</td><td>candidate</td></tr>
-<tr><td>02 Primary Fetch</td><td>candidate URL</td><td>공식 원문·metadata 추출</td><td>verification item</td></tr>
-<tr><td>03 Verification</td><td>원문 + proposed fact</td><td>claim support·scope·duplicate 확인</td><td>verified / review / reject</td></tr>
-<tr><td>04 Publish</td><td>verified only</td><td>immutable Evidence ID·provenance 저장</td><td>Evidence corpus</td></tr>
-<tr><td>05 Intelligence</td><td>changed corpus</td><td>Signal·Gap·Watchlist 재계산</td><td>updated brief</td></tr>
-</tbody></table>
-<div class="box" style="margin-top:14px"><div class="eyebrow">FAIL-SAFE</div><div class="why">수집 실패나 모호한 자료가 있어도 기존 verified corpus는 유지합니다. 새 자료가 없으면 “변화 없음”으로 종료하며 빈 결과를 생성형 추정으로 채우지 않습니다.</div></div></section><section id="handoff" class="view"><div class="title">Live Backend Handoff</div><div class="count">현재 운영 서비스을 실제 정기 수집 Radar로 옮길 때 필요한 API·DB·스케줄러 계약을 정의합니다.</div>
-<div class="feed">
-<div class="row"><div class="meta"><span class="pill core">API 01</span></div><h3>/candidates</h3><p>Source Registry 검색 결과를 candidate 상태로 저장. 공개 Evidence와 분리.</p></div>
-<div class="row"><div class="meta"><span class="pill core">API 02</span></div><h3>/verification</h3><p>원문 메타데이터·claim·중복·관련성 검증 후 verified / needs_review / rejected 결정.</p></div>
-<div class="row"><div class="meta"><span class="pill core">API 03</span></div><h3>/evidence</h3><p>verified 레코드만 immutable ID와 provenance를 유지해 제공.</p></div>
-<div class="row"><div class="meta"><span class="pill">JOB</span></div><h3>Scheduled discovery + link health</h3><p>Priority A 출처를 먼저 확인하고 변경된 원문만 검증 큐로 전달.</p></div>
 </div>
-<div class="layout"><div><div class="title">DB 핵심 테이블</div><div class="panel"><div class="sideitem"><b>sources</b><small>Registry · priority · official domain</small></div><div class="sideitem"><b>candidates</b><small>발견 URL · fingerprint · discovery time</small></div><div class="sideitem"><b>evidence</b><small>verified facts · provenance · immutable ID</small></div><div class="sideitem"><b>revisions</b><small>수정 전후 · 이유 · timestamp</small></div></div></div><div><div class="title">자동 게시 금지 조건</div><div class="panel"><div class="sideitem"><b>Unsupported claim</b><small>원문이 fact를 직접 지지하지 않음</small></div><div class="sideitem"><b>Ambiguous scope</b><small>정책인지 권고인지 불분명</small></div><div class="sideitem"><b>Conflicting metadata</b><small>날짜·기관·버전 충돌</small></div><div class="sideitem"><b>Duplicate unresolved</b><small>기존 Evidence와 관계 불명확</small></div></div></div></div></section><section id="release" class="view"><div class="title">Release Readiness</div><div class="count">여러 단계의 설계·조사·검증을 하나의 운영 가능한 프로토타입 기준으로 통합 점검합니다.</div>
-<div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-<div class="box"><div class="eyebrow">EVIDENCE</div><div class="big" data-db-count>__DB_EVIDENCE_COUNT__</div><div class="why">대표 검증 corpus</div></div>
-<div class="box"><div class="eyebrow">PIPELINE</div><div class="big">READY</div><div class="why">discover → verify → publish</div></div>
-<div class="box"><div class="eyebrow">INTELLIGENCE</div><div class="big">READY</div><div class="why">signals · gaps · decisions</div></div>
-<div class="box"><div class="eyebrow">UPDATE MODE</div><div class="big">MANUAL</div><div class="why">공식 원문 검증 후 수동 반영</div></div>
 </div>
-<div class="feed">
-<div class="row"><div class="meta"><span class="pill core">STAGE 1</span></div><h3>P1 Evidence expansion</h3><p>국내 assessment와 governance GAP을 우선 조사하고 국제 governance 근거를 보강했습니다.</p></div>
-<div class="row"><div class="meta"><span class="pill core">STAGE 2</span></div><h3>Signal refresh</h3><p>새 Evidence가 기존 Assessment · Governance · Institutional Transformation 신호에 연결되도록 corpus를 갱신했습니다.</p></div>
-<div class="row"><div class="meta"><span class="pill core">STAGE 3</span></div><h3>Production handoff</h3><p>Source Registry, Research Queue, Verification Queue, Provenance, Scoring, Watchlist, QA, Export를 하나의 운영 흐름으로 연결했습니다.</p></div>
+</section>
+
+<section class="view" id="tracker"><div class="title">Deep Dive · 2026 AI 기본교육과정 참여 20개교</div>
+<div class="count">전체 Radar에서 포착된 특정 국내 정책사업을 별도로 깊게 본 사례입니다. 동일한 판정 기준을 닫힌 모집단 20개교에 적용했습니다. 20개교 모두 대학별 공식 원문 근거를 확보했으며, 현재 단계는 해당 대학 Evidence의 ladder_level 최댓값으로 자동 산출합니다.</div>
+<div class="box" id="trackerSummary" style="margin-bottom:12px"></div>
+<table><thead><tr><th>권역</th><th>대학</th><th>현재 단계</th><th>접근 유형</th><th>근거 Evidence</th><th>다음 확인 항목</th></tr></thead><tbody id="trackerBody"></tbody></table>
+
+<div class="layout" style="margin-top:14px">
+<div><div class="title">20개교 접근 유형 비교</div><div class="panel" id="approachSummary"></div></div>
+<div><div class="title">국내 20개교 × 해외 대학 · 평가 재설계</div><div class="panel" id="assessmentCompare"></div></div>
 </div>
-<div class="box"><div class="eyebrow">CURRENT BOUNDARY</div><div class="why">자동 수집·정기 스케줄링은 아직 운영하지 않습니다. 신규 자료는 원문 검증 후 수동으로 반영합니다.</div></div></section><section id="rqresults" class="view"><div class="title">P1 Research Results · Round 3</div><div class="count">Research Queue의 우선 GAP을 실제 공식자료 조사로 보강한 결과입니다.</div><div id="rqEvidence" class="feed"></div><div class="box"><div class="eyebrow">VERIFICATION</div><div class="why">이번 추가 레코드는 공식 대학·공공기관 원문에서 직접 확인한 내용만 반영했습니다. 검색결과의 설명만으로 Evidence를 만들지 않았습니다.</div></div></section><section id="researchq" class="view">
-<div class="title">Research Queue</div>
-<div class="count">Gap Matrix와 Source Registry를 결합해 다음 조사 작업을 우선순위 큐로 만듭니다.</div>
-<div class="controls" style="grid-template-columns:1fr 1fr">
-<select id="rqPriority"><option value="">전체 우선순위</option><option>P1</option><option>P2</option><option>P3</option></select>
-<select id="rqRegion"><option value="">전체 범위</option><option>국내</option><option>해외/글로벌</option></select>
-</div>
-<div id="rqCount" class="count"></div><div id="rqResults" class="feed"></div>
-<div class="box" style="margin-top:14px"><div class="eyebrow">QUEUE LOGIC</div><div class="why">자료가 적은 영역을 먼저 조사하되, Priority A 공식기관과 실제 implementation evidence를 우선합니다. 발견 결과는 자동으로 Evidence가 되지 않고 검증 큐로 이동합니다.</div></div>
-</section><section id="gaps" class="view">
+<div class="box" style="margin-top:14px"><div class="eyebrow">NEXT CHECK · 2026년 9월</div>
+<div class="why">Tracker의 <b>다음 확인 항목</b>은 단계별 기본값을 사용하되, 기존 fact에 숫자·시점·구체 프로그램처럼 검증 가능한 약속이 명시된 경우에만 그 약속을 구체적으로 추적합니다. 현재 L1 근거 중 실제 시행 여부를 다시 확인할 시점이 명시된 사례를 별도 추적합니다. <b>한라대</b>(2026-2학기 H-자유학기제), <b>한국외대</b>(2학기 AI 기본교육과정 지원 조교 모집), <b>동의대</b>(개발 교원 선정 후 MD 개발), <b>University of Queensland</b>(2학기 Secure/Open 평가 분류 적용)가 확인 대상입니다. 이 목록은 승격 확정이 아니라 <b>L1→L2 전환 여부를 검증할 확인 큐</b>입니다.</div></div>
+<div class="box" style="margin-top:14px"><div class="eyebrow">IMPLEMENTATION EVIDENCE GAP</div><div class="why">2026 사업 참여 20개교 전수 확인 결과 공개 Evidence 기준 현재 L2는 4개교, L1은 16개교이며 국내 대학의 L3 참여·활용 데이터 및 L4 성과 측정 <b>공개 근거</b>는 아직 0건입니다. 이는 “성과가 없다”는 단정이 아니라 <b>현재 공개·검증 가능한 Evidence의 구조</b>를 보여주는 기준선입니다.</div></div></section><section class="view" id="ladder"><div class="title">Implementation Ladder — 대학 사례 판정 기준</div><div class="count">대학이 공개한 AI 교육 Evidence로 어디까지 확인할 수 있는지를 단계로 구분합니다. <b>낮은 단계는 실제 활동이나 성과가 없다는 뜻이 아니라, 현재 Registry에서 그 이상을 확인할 공개 근거가 없다는 뜻입니다.</b> 이 기준은 특정 사업에 종속되지 않습니다.</div>
+<table><thead><tr><th>Level</th><th>Evidence</th><th>공개근거 해석</th></tr></thead><tbody>
+<tr><td>L0</td><td>정책·사업 발표</td><td>방향 공개</td></tr><tr><td>L1</td><td>대학 선정·예산·전담체계</td><td>방침·조직·자원 확인</td></tr>
+<tr><td>L2</td><td>교육과정·가이드·교수개발 실제 운영</td><td>실제 시행·운영 확인</td></tr><tr><td>L3</td><td>학생·교수 참여/활용 데이터</td><td>참여·활용 데이터 확인</td></tr>
+<tr><td>L4</td><td>학습·평가·업무 성과 측정</td><td>성과 측정 확인</td></tr><tr><td>L5</td><td>반복평가 후 제도·교육과정 개선</td><td>측정 결과를 반영한 개선 확인</td></tr>
+</tbody></table><div class="box"><div class="eyebrow">KDIS LENS · OPTIONAL APPLICATION</div>
+<div class="why">같은 판정 기준을 KDIS 내부 활동에도 적용할 수 있습니다. 다만 KDIS Self-check는 Registry의 목적이 아니라 <b>분석 프레임의 확장 가능성</b>을 보여주는 별도 Lens이며, 아래 사례는 외부 110건 corpus와 Signal Score에 포함하지 않습니다.</div>
+<div style="overflow:auto;margin-top:10px"><table><thead><tr><th>KDIS 공식 근거</th><th>공개근거 단계</th><th>판정 이유</th><th>다음 단계 확인에 필요한 Evidence</th></tr></thead><tbody>
+<tr><td><a href="https://www.kdischool.ac.kr/boardDownload.es?bid=0010&amp;list_no=17114&amp;mid=a10501040000&amp;seq=1" target="_blank" rel="noopener">AI-based Tools Guidelines</a></td><td>L1</td><td>AI 활용 원칙과 교수자의 syllabus 정책을 명시한 제도·가이드 근거</td><td>L2: 실제 수업·업무에서 가이드가 적용·운영되었다는 직접 근거</td></tr>
+<tr><td><a href="https://www.kdischool.ac.kr/menu.es?mid=a20207000000" target="_blank" rel="noopener">ALEKS · MyLab Economics</a></td><td>L2</td><td>AI 기반 적응형 학습을 대학원 정규 핵심과목에 제공한다고 공식 명시</td><td>L3: 참여자 수 · 이용/이수 데이터</td></tr>
+<tr><td><a href="https://www.kdischool.ac.kr/menu.es?mid=a10208050200" target="_blank" rel="noopener">Data Science curriculum</a></td><td>L2</td><td>Introduction to AI · Machine Learning · AI Ethics 등이 정규 curriculum에 포함</td><td>L3: 참여자 수 · 이용/이수 데이터</td></tr>
+<tr><td>참여·활용 데이터 / 학습성과</td><td>미판정</td><td>이번 공개자료 확인 범위에서는 L3·L4를 판정할 직접 공개 근거를 확인하지 않음</td><td>L3: 참여자 수 · 이용/이수 데이터 · L4: 학습성과·효과 측정 근거</td></tr>
+</tbody></table></div>
+<div class="why" style="margin-top:8px"><b>주의:</b> 위 칸은 다음 단계 판정에 <b>필요한 Evidence 유형</b>만 표시합니다. 해당 데이터의 실제 존재 여부는 추정하지 않으며, 공개·검증 가능한 근거가 확인되기 전에는 L3·L4로 올리지 않습니다.</div></div></section><section class="view" id="gaps">
 <div class="title">Evidence Gap Matrix</div>
-<div class="count">현재 검증 corpus에서 기관유형 × 주제 조합의 자료 밀도를 확인해 다음 조사 우선순위를 정합니다.</div>
+<div class="count">Registry의 기관유형 × 주제 조합을 분석해 근거가 두꺼운 영역과 비어 있는 영역을 구분합니다.</div>
 <div style="overflow:auto"><table><thead><tr><th>기관유형</th><th>Assessment</th><th>Competency</th><th>Governance</th><th>Transformation</th><th>Student</th><th>Trust</th></tr></thead><tbody id="gapBody"></tbody></table></div>
 <div class="layout"><div><div class="title">표시 기준</div><div class="panel">
 <div class="sideitem"><b>GOOD · 4+</b><small>현재 corpus에서 비교 가능한 근거가 축적됨</small></div>
 <div class="sideitem"><b>BUILD · 2–3</b><small>추가 독립 근거가 필요</small></div>
 <div class="sideitem"><b>GAP · 0–1</b><small>다음 discovery 우선순위</small></div>
-</div></div><div><div class="title">다음 조사 큐</div><div id="gapQueue" class="panel"></div></div></div>
-<div class="box"><div class="eyebrow">IMPORTANT</div><div class="why">GAP은 현실에 자료가 없다는 뜻이 아니라 현재 Radar의 검증 corpus가 부족하다는 뜻입니다. 이 값을 기관 평가나 순위로 사용하지 않습니다.</div></div>
-</section><section id="compare" class="view">
-<div class="title">Evidence Compare</div>
-<div class="count">기관·국가·주제별로 검증 Evidence를 나란히 비교해 공통점과 차이를 직접 확인합니다.</div>
-<div class="controls" style="grid-template-columns:1fr 1fr 1fr">
-<select id="cmpA"></select><select id="cmpB"></select><select id="cmpTopic"><option value="">전체 주제</option></select>
-</div>
-<div class="layout">
-<div><div class="title" id="cmpATitle">A</div><div id="cmpAStats" class="box"></div><div id="cmpAResults" class="feed" style="margin-top:10px"></div></div>
-<div><div class="title" id="cmpBTitle">B</div><div id="cmpBStats" class="box"></div><div id="cmpBResults" class="feed" style="margin-top:10px"></div></div>
-</div>
-<div class="box" style="margin-top:14px"><div class="eyebrow">COMPARE RULE</div><div class="why">비교 화면은 현재 검증된 corpus 안에서의 차이만 보여줍니다. 자료가 적다는 사실을 해당 기관이 실제로 활동하지 않는다는 뜻으로 해석하지 않습니다.</div></div>
-</section><section id="exporter" class="view">
-<div class="title">Data Export</div>
-<div class="count">검증 Evidence를 다른 분석·보고·백엔드 시스템에서 재사용할 수 있도록 구조화된 형태로 내보냅니다.</div>
-<div class="layout"><div>
-<div class="title">내보내기 범위</div><div class="panel">
-<div class="sideitem"><b>Verified Evidence</b><small>원문 근거가 확인된 자료 레코드</small></div>
-<div class="sideitem"><b>Provenance</b><small>Evidence ID · Authority · 검증 상태</small></div>
-<div class="sideitem"><b>Classification</b><small>기관유형 · 주제 · 자료유형 · 중요도</small></div>
-<div class="sideitem"><b>Source URL</b><small>각 Evidence의 공식 원문 주소</small></div>
-</div></div>
-<div><div class="title">포맷</div><div class="feed">
-<div class="row"><h3>JSON</h3><p>백엔드·API·자동화 파이프라인용 전체 구조 데이터</p></div>
-<div class="row"><h3>CSV</h3><p>Excel·Power BI·간단한 통계분석용 평면 데이터</p></div>
-<div class="row"><h3>Snapshot</h3><p>특정 버전의 Evidence corpus를 보존하는 릴리스 스냅샷</p></div>
-</div></div></div>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-<button id="exportJson">JSON 다운로드</button>
-<button id="exportCsv">CSV 다운로드</button>
-<button id="exportSnapshot">Snapshot 다운로드</button>
-</div><span id="exportMsg" class="count"></span>
-<div class="box" style="margin-top:14px"><div class="eyebrow">DATA RULE</div><div class="why">Export에는 검증 Evidence와 provenance를 포함합니다. Signal·Priority·Decision Brief 같은 Intelligence 해석은 별도 층으로 유지합니다.</div></div>
-</section><section id="briefing" class="view">
-<div class="title">보고용 Executive Brief</div>
-<div class="count">Radar의 검증 Evidence와 Intelligence를 회의·보고용으로 짧게 재구성하는 화면입니다.</div>
-<div class="box" style="margin-bottom:12px"><div class="eyebrow">EXECUTIVE SUMMARY</div>
-<div class="big">고등교육 AI 대응은 ‘도구 사용 규칙’에서 ‘평가·역량·조직 전환’으로 범위가 확대되고 있습니다.</div>
-<div class="why">이 문장은 Radar에 축적된 복수의 검증 Evidence를 종합한 Intelligence 요약이며, 개별 기관의 공식 입장을 그대로 인용한 문장이 아닙니다.</div></div>
-<div class="feed">
-<div class="row"><div class="meta"><span class="pill core">01</span><span>Assessment</span></div><h3>평가 재설계가 가장 강한 추적 축</h3><p>AI 허용·금지 여부를 넘어 학습과정 증거, authentic assessment, 기준·rubric, learning assurance로 논의가 확장됩니다.</p></div>
-<div class="row"><div class="meta"><span class="pill core">02</span><span>Competency</span></div><h3>학생·교수자의 AI 역량을 구조화</h3><p>AI literacy가 개별 도구 사용법이 아니라 윤리·검증·비판적 판단·전공 적용을 포함하는 역량체계로 발전합니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">03</span><span>Institution</span></div><h3>대학 전체의 AI readiness로 확장</h3><p>데이터, 거버넌스, 업무, 조달, 교수·직원 역량과 조직 성숙도를 함께 보는 접근이 증가합니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">04</span><span>Watch</span></div><h3>학생성과와 실제 실행효과는 계속 검증 필요</h3><p>AI 도입·사용률보다 학습성과, 학생지원, 진로, 업무효율의 실제 효과를 보여주는 근거를 우선 추적합니다.</p></div>
-</div>
-<div class="layout"><div><div class="title">회의에서 볼 질문</div><div class="panel">
-<div class="sideitem"><b>Assessment</b><small>현재 평가방식은 AI가 존재하는 환경에서도 학습을 제대로 확인하는가?</small></div>
-<div class="sideitem"><b>Competency</b><small>학생과 교수자에게 필요한 AI 역량을 명시하고 있는가?</small></div>
-<div class="sideitem"><b>Governance</b><small>AI 도입의 데이터·privacy·책임·조달 원칙은 있는가?</small></div>
-<div class="sideitem"><b>Impact</b><small>AI 도입 효과를 어떤 지표로 확인할 것인가?</small></div>
-</div></div><div><div class="title">근거 확인 경로</div><div class="panel">
-<div class="sideitem"><b>신호별 근거</b><small>요약을 뒷받침하는 공식 Evidence 확인</small></div>
-<div class="sideitem"><b>출처 추적</b><small>Evidence ID · Authority · 원문 확인</small></div>
-<div class="sideitem"><b>신호 점수</b><small>Signal 강도의 계산 근거 확인</small></div>
-<div class="sideitem"><b>커버리지</b><small>아직 자료가 부족한 영역 확인</small></div>
-</div></div></div>
-<button id="copyBrief" style="margin-top:12px">브리핑 텍스트 복사</button><span id="copyMsg" class="count" style="margin-left:8px"></span>
-</section><section id="review" class="view">
-<div class="title">운영 · QA 대시보드</div>
-<div class="count">Radar가 실제 운영될 때 데이터 품질과 검증 상태를 한눈에 점검하는 관리자용 화면입니다.</div>
-<div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-<div class="box"><div class="eyebrow">VERIFIED</div><div class="big" id="qaVerified">-</div><div class="why">현재 검증 Evidence</div></div>
-<div class="box"><div class="eyebrow">NEEDS REVIEW</div><div class="big" id="qaReview">-</div><div class="why">재검토 대기</div></div>
-<div class="box"><div class="eyebrow">CORRECTION</div><div class="big" id="qaCorrection">-</div><div class="why">수정 플래그</div></div>
-<div class="box"><div class="eyebrow">LINK HEALTH</div><div class="big" id="qaLinks">-</div><div class="why">운영환경에서 정기 점검 대상</div></div>
-</div>
-<div class="layout"><div>
-<div class="title">운영 체크리스트</div><div class="panel">
-<div class="sideitem"><b>01 · Discovery</b><small>Priority A 출처부터 신규/업데이트 후보 확인</small></div>
-<div class="sideitem"><b>02 · Verification</b><small>후보가 검증 큐를 통과했는지 확인</small></div>
-<div class="sideitem"><b>03 · Signal QA</b><small>새 Evidence가 신호 강도를 과도하게 바꾸지 않는지 확인</small></div>
-<div class="sideitem"><b>04 · Link health</b><small>공식 원문 링크 변경·삭제 여부 확인</small></div>
-<div class="sideitem"><b>05 · Correction log</b><small>수정이 필요한 Evidence의 이력 보존</small></div>
-</div></div>
-<div><div class="title">릴리스 게이트</div><div class="feed">
-<div class="row"><div class="meta"><span class="pill core">PASS</span></div><h3>Verified Evidence only</h3><p>검증 완료 자료만 사용자 화면과 Signal 계산에 반영합니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">HOLD</span></div><h3>Ambiguous / conflicting evidence</h3><p>범위·날짜·정책 상태가 불명확하면 자동 게시하지 않습니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">LOG</span></div><h3>Every correction</h3><p>수정은 기존 값을 조용히 덮어쓰지 않고 변경 이력을 남깁니다.</p></div>
-</div></div></div>
-<div class="box"><div class="eyebrow">PRODUCTION BOUNDARY</div><div class="why">현재 서비스는 Flask + SQLite 기반으로 운영되며, 신규 Evidence는 공식 원문 검증 후 수동 반영합니다. 실제 자동 수집·링크 상태 점검·예약 실행은 네트워크가 연결된 서버/백엔드 환경에서 이 사양을 구현해야 합니다.</div></div>
-</section><section id="registry" class="view">
-<div class="title">Source Registry</div>
-<div class="count">Radar가 정기적으로 확인해야 할 출처군을 관리합니다. 자료 자체가 아니라 “어디를 계속 볼 것인가”를 관리하는 층입니다.</div>
-<div class="controls" style="grid-template-columns:1fr 1fr"><select id="regRegion"><option value="">전체 범위</option><option>국내</option><option>해외</option><option>글로벌</option></select><select id="regType"><option value="">전체 유형</option><option>정책·공공기관</option><option>규제·품질보증</option><option>고등교육 리딩기관</option><option>대학</option></select></div>
-<div id="registryCards" class="feed"></div>
-<div class="box" style="margin-top:14px"><div class="eyebrow">REGISTRY RULE</div><div class="why">Registry에 포함됐다는 이유만으로 해당 기관의 모든 자료를 Evidence로 취급하지 않습니다. 발견된 개별 자료는 반드시 검증 큐를 통과해야 합니다.</div></div>
-</section><section id="watchlist" class="view">
-<div class="title">Change Watchlist</div>
-<div class="count">다음 수집 주기에서 무엇을 먼저 다시 확인할지 관리합니다. 검증되지 않은 신규 사실은 이 화면에서 생성하지 않습니다.</div>
-<div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-<div class="box"><div class="eyebrow">P1</div><div class="big">국내 평가 재설계</div><div class="why">국내 대학의 실제 assessment redesign · rubric · oral/process assessment 사례</div></div>
-<div class="box"><div class="eyebrow">P1</div><div class="big">AI Governance</div><div class="why">대학 차원의 데이터 · 조달 · privacy · 책임체계 변화</div></div>
-<div class="box"><div class="eyebrow">P2</div><div class="big">Student Outcomes</div><div class="why">사용률이 아니라 학습성과 · 학생지원 · 진로효과의 실증자료</div></div>
-<div class="box"><div class="eyebrow">P2</div><div class="big">Workforce</div><div class="why">교수·직원의 역할 · 업무 · 역량체계 변화</div></div>
-</div>
-<div class="layout">
-<div><div class="title">변경 감지 규칙</div><div class="panel">
-<div class="sideitem"><b>NEW</b><small>Source Registry에 없던 공식 신규자료</small></div>
-<div class="sideitem"><b>UPDATED</b><small>기존 공식자료의 날짜·내용·버전 변경</small></div>
-<div class="sideitem"><b>IMPLEMENTED</b><small>권고·계획이 실제 운영·정책으로 전환</small></div>
-<div class="sideitem"><b>CONTRADICTED</b><small>기존 Signal과 다른 방향의 신뢰할 수 있는 근거 등장</small></div>
-</div></div>
-<div><div class="title">알림 조건</div><div class="panel">
-<div class="sideitem"><b>Signal strength changed</b><small>WATCH ↔ GROWING ↔ STRONG</small></div>
-<div class="sideitem"><b>High-authority source</b><small>Tier A 신규 정책·규제·품질보증 자료</small></div>
-<div class="sideitem"><b>New implementation case</b><small>실제 대학 운영사례가 새로 확인</small></div>
-<div class="sideitem"><b>Evidence correction</b><small>원문 수정·링크 단절·기존 fact 재검토 필요</small></div>
-</div></div></div>
-<div class="box"><div class="eyebrow">NO-HALLUCINATION RULE</div><div class="why">변화가 감지되지 않았거나 검증이 끝나지 않은 경우 “새로운 변화 없음 / 검증 대기”로 유지합니다. 빈칸을 추정으로 채우지 않습니다.</div></div>
-</section><section id="scoring" class="view">
+</div></div><div><div class="title">다음 조사 큐</div><div class="panel" id="gapQueue"></div></div></div>
+<div class="box"><div class="eyebrow">IMPORTANT</div><div class="why">GAP은 현실에 자료가 없다는 뜻이 아니라 현재 Registry의 검증 corpus가 부족하다는 뜻입니다. 이 값을 기관 평가나 순위로 사용하지 않습니다.</div></div>
+</section><section class="view" id="scoring">
 <div class="title">Signal Scoring</div>
 <div class="count">“많이 언급됐다”만으로 강한 신호가 되지 않도록 근거 수·출처 다양성·권위·실행근거를 함께 계산합니다.</div>
 <table><thead><tr><th>신호</th><th>Evidence</th><th>출처 유형</th><th>Authority</th><th>실행근거</th><th>점수</th><th>상태</th></tr></thead><tbody id="scoreBody"></tbody></table>
@@ -411,382 +109,156 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 <div class="sideitem"><b>Evidence volume · 30%</b><small>검증자료가 충분히 반복되는가</small></div>
 <div class="sideitem"><b>Source diversity · 25%</b><small>한 기관이 아니라 독립된 기관유형에서 확인되는가</small></div>
 <div class="sideitem"><b>Source authority · 20%</b><small>규제·정책·리딩기관·공식 대학 원문인가</small></div>
-<div class="sideitem"><b>Implementation · 25%</b><small>의견을 넘어 정책·운영·파일럿·프레임워크로 실행됐는가</small></div>
+<div class="sideitem"><b>Implementation Maturity · 25%</b><small>L0~L4 성숙도를 0~100으로 환산하고 작은 대학 표본은 전체 대학 코퍼스 평균으로 α=5 수축 보정</small></div>
 </div></div><div><div class="title">상태 해석</div><div class="panel">
 <div class="sideitem"><b>STRONG</b><small>여러 독립 근거 + 실제 실행근거가 축적</small></div>
 <div class="sideitem"><b>GROWING</b><small>근거가 늘고 있으나 범위·실행 수준을 더 추적</small></div>
 <div class="sideitem"><b>WATCH</b><small>초기 신호. 일반화하지 않고 추가 근거 대기</small></div>
 </div></div></div>
-<div class="box"><div class="eyebrow">GUARDRAIL</div><div class="why">Signal score는 사실 자체가 아니라 Radar 내부의 우선순위 지표입니다. 원문 Evidence와 항상 분리해서 표시합니다.</div></div>
-</section><section id="provenance" class="view"><div class="title">Evidence Provenance</div>
-<div class="count">각 자료가 어디서 왔고 어떤 검증 상태인지 추적하기 위한 기록층입니다. Evidence와 해석을 분리합니다.</div>
-<div class="controls" style="grid-template-columns:1fr 1fr 1fr"><select id="provTier"><option value="">전체 Authority</option><option value="A">Tier A</option><option value="B">Tier B</option><option value="C">Tier C</option></select><select id="provStatus"><option value="">전체 상태</option><option value="verified">Verified</option></select><input id="provQ" placeholder="기관·자료 검색"></div>
-<div id="provCount" class="count"></div><table><thead><tr><th>ID</th><th>Authority</th><th>상태</th><th>기관</th><th>자료</th><th>원문</th></tr></thead><tbody id="provBody"></tbody></table>
-<div class="box" style="margin-top:14px"><div class="eyebrow">CORRECTION PRINCIPLE</div><div class="why">원문 변경·링크 단절·메타데이터 오류가 발견되면 기존 Evidence를 조용히 덮어쓰지 않고 수정 이력을 남기는 운영을 전제로 합니다.</div></div></section><section id="queue" class="view"><div class="title">신규자료 검증 큐</div><div class="count">자동 발견된 자료가 바로 공개되지 않고, 아래 검증 단계를 통과한 뒤 Evidence Library에 들어가는 구조입니다.</div>
-<table><thead><tr><th>상태</th><th>검증 항목</th><th>통과 기준</th><th>실패 시</th></tr></thead><tbody>
-<tr><td><span class="pill">1</span> Candidate</td><td>공식 출처</td><td>기관 공식 primary URL</td><td>Reject</td></tr>
-<tr><td><span class="pill">2</span> Metadata</td><td>기관·제목·날짜</td><td>원문에서 직접 확인</td><td>Needs review</td></tr>
-<tr><td><span class="pill">3</span> Claim</td><td>fact 문장</td><td>원문이 직접 뒷받침</td><td>Rewrite / Reject</td></tr>
-<tr><td><span class="pill">4</span> Relevance</td><td>고등교육 AI 관련성</td><td>정책·교육·평가·운영 변화에 실질적 정보</td><td>Archive</td></tr>
-<tr><td><span class="pill">5</span> Dedup</td><td>중복·재배포</td><td>기존 Evidence와 실질적으로 구별</td><td>Merge</td></tr>
-<tr><td><span class="pill core">6</span> Verified</td><td>분류·신호 연결</td><td>topic + authority + evidence strength 확정</td><td>Publish</td></tr>
-</tbody></table>
-<div class="layout"><div><div class="title">자동화 가능</div><div class="panel"><div class="sideitem"><b>URL/도메인 확인</b><small>Source Registry와 일치 여부</small></div><div class="sideitem"><b>메타데이터 추출</b><small>제목·기관·날짜·자료유형</small></div><div class="sideitem"><b>중복 후보 탐지</b><small>제목·URL·핵심 주장 유사도</small></div></div></div><div><div class="title">강한 검증 필요</div><div class="panel"><div class="sideitem"><b>주장의 정확성</b><small>원문이 fact를 실제로 지지하는가</small></div><div class="sideitem"><b>Intelligence 해석</b><small>단일 사례를 전체 추세로 과대해석하지 않는가</small></div><div class="sideitem"><b>신호 강도 변경</b><small>독립된 복수 근거가 충분한가</small></div></div></div></div></section><section id="ops" class="view"><div class="title">실제 운영 구조</div><div class="count">정적 자료집이 아니라 신규 공식자료를 발견 → 검증 → 분류 → 신호에 반영하는 운영 파이프라인 설계입니다.</div>
-<div class="feed">
-<div class="row"><div class="meta"><span class="pill">01 DISCOVER</span></div><h3>Source Registry에서 신규자료 발견</h3><p>국내 정책기관 · 국내 대학 · 해외 대학 · 규제/품질보증기관 · 국제/고등교육 리딩기관을 분리해 검색합니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">02 VERIFY</span></div><h3>공식 원문 검증</h3><p>공식 도메인, 발행일, 기관, 제목, 원문 접근성, 핵심 주장 근거를 확인합니다. 검색 스니펫만으로는 DB에 들어가지 않습니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">03 CLASSIFY</span></div><h3>주제 · 기관유형 · 자료유형 · Source Authority 분류</h3><p>Assessment, Competency, Governance, Transformation, Student Experience, Integrity/Trust 등의 축으로 분류합니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">04 DEDUP</span></div><h3>중복·재배포 제거</h3><p>보도자료와 원 보고서가 동시에 발견되면 원 보고서를 우선하고 동일 사실의 반복 노출을 줄입니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">05 SIGNAL</span></div><h3>Evidence와 Intelligence 분리</h3><p>단일 자료는 Evidence로 저장하고, 복수 독립 근거가 축적될 때만 Signal 강도를 높입니다.</p></div>
-<div class="row"><div class="meta"><span class="pill core">06 PUBLISH</span></div><h3>Brief · Priority · Timeline · Evidence 자동 반영</h3><p>검증된 신규자료만 사용자 화면에 노출하고, 기존 신호의 강도와 커버리지 변화를 다시 계산합니다.</p></div>
-</div></section><section id="assurance" class="view"><div class="title">품질보증 · 신뢰 · 실행 일관성</div><div class="count">AI 정책의 존재 여부보다 학습을 실제로 보증하고 기관 전체에서 일관되게 실행되는지를 추적합니다.</div><div class="metrics" style="grid-template-columns:repeat(3,1fr)"><div class="box"><div class="eyebrow">LEARNING ASSURANCE</div><div class="big">학습이 실제로 일어났음을 어떻게 보증할 것인가</div><div class="why">adaptive capabilities · authentic evidence · assessment validity</div></div><div class="box"><div class="eyebrow">CONSISTENCY</div><div class="big">정책과 실제 수업 운영의 간극</div><div class="why">기관 → 학과 → 과목 → 교수자 사이의 적용 편차 추적</div></div><div class="box"><div class="eyebrow">TRUST</div><div class="big">탐지 중심에서 설계·투명성·책임으로</div><div class="why">academic integrity · disclosure · assessment security</div></div></div><div class="layout"><div><div class="title">현재 강한 근거</div><div id="assuranceEvidence" class="feed"></div></div><div><div class="title">Source Authority</div><div class="panel"><div class="sideitem"><b>Tier A · 규제/품질보증</b><small>TEQSA · QAA 등</small></div><div class="sideitem"><b>Tier B · 고등교육 리딩기관</b><small>EDUCAUSE · Jisc · UNESCO IESALC 등</small></div><div class="sideitem"><b>Tier C · 공식 대학 사례</b><small>공식 정책·Teaching Center·연구 프로젝트</small></div><div class="sideitem"><b>Primary evidence 제외</b><small>웨비나 홍보 · 검색 스니펫 · 벤더 마케팅 · 출처 불명 자료</small></div></div></div></div></section><section id="coverage" class="view">
-<div class="title">Radar 커버리지 & 빈 영역</div>
-<div class="count">특정 기관·주제에 자료가 몰리지 않도록 현재 축적상태와 다음 조사 우선영역을 함께 봅니다.</div>
-<div class="layout">
-<div>
-<div class="title">기관 유형별 축적</div><div id="coverageGroups" class="feed"></div>
-<div class="title" style="margin-top:18px">주제별 축적</div><div id="coverageTopics" class="feed"></div>
-</div>
-<div>
-<div class="title">다음 조사 우선영역</div>
-<div class="panel">
-<div class="sideitem"><b>국내 대학 · 평가 재설계</b><small>정책 가이드보다 실제 assessment redesign 사례가 상대적으로 부족</small></div>
-<div class="sideitem"><b>학생경험 · 학습성과</b><small>AI 사용률보다 학습·지원·진로 효과를 보여주는 실증근거 확충</small></div>
-<div class="sideitem"><b>AI transparency</b><small>AI 활용 기록·disclosure·책임소재 관련 제도 추적</small></div>
-<div class="sideitem"><b>업무·행정 AI</b><small>교수학습 외 대학 행정·직원업무의 실제 운영사례 확충</small></div>
-</div>
-</div></div>
+<div class="box"><div class="eyebrow">GUARDRAIL</div><div class="why">Signal score는 사실 자체가 아니라 Registry 내부의 분석·우선순위 지표입니다. 각 Evidence는 가장 직접적인 하나의 Signal에만 배타적으로 매핑하며 중복 계상하지 않습니다.</div></div>
 </section>
-<section id="cases" class="view">
-<div class="title">대학별 AI 대응 사례</div>
-<div class="count">정책 문구만 비교하지 않고, 실제 평가·교육과정·교수지원·운영 변화가 확인되는 공식 대학자료를 모아봅니다.</div>
-<div class="controls" style="grid-template-columns:1.4fr 1fr 1fr"><select id="caseUni"><option value="">전체 대학</option></select><select id="caseTopic"><option value="">전체 주제</option></select><select id="caseYear"><option value="">전체 연도</option></select></div>
-<div style="display:flex;gap:7px;margin-bottom:12px"><button class="casequick" data-q="">전체</button><button class="casequick" data-q="국내 대학">국내 대학만</button><button class="casequick" data-q="해외 대학">해외 대학만</button></div><div id="caseCount" class="count"></div><div id="caseResults" class="feed"></div>
-</section>
-<section id="priority" class="view">
-<div class="title">지금 먼저 볼 변화</div>
-<div class="count">최신성만으로 정렬하지 않고, 공식 근거의 축적 정도와 고등교육에 미치는 범위를 함께 봅니다.</div>
-<div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-<div class="box"><div class="eyebrow">01 · HIGH</div><div class="big">Assessment Redesign</div><div class="why">평가목표·과정·authentic assessment·AI 사용조건 재설계</div></div>
-<div class="box"><div class="eyebrow">02 · HIGH</div><div class="big">AI Competency</div><div class="why">학생·교수자의 AI literacy와 competency 체계화</div></div>
-<div class="box"><div class="eyebrow">03 · RISING</div><div class="big">Institutional Transformation</div><div class="why">AI가 데이터·거버넌스·조직·업무전략으로 확장</div></div>
-<div class="box"><div class="eyebrow">04 · WATCH</div><div class="big">Student Experience</div><div class="why">AI가 학생지원·진로준비·학습경험에 미치는 실제 효과 추적</div></div>
-</div>
-<div class="layout">
-<div><div class="title">왜 우선순위가 높은가</div><div class="feed">
-<div class="row"><h3>Assessment Redesign</h3><p>Horizon, Jisc, 대학별 교수설계 자료에서 반복적으로 나타나며 실제 평가 운영 변화로 이어지고 있습니다.</p></div>
-<div class="row"><h3>AI Competency</h3><p>학생과 교수자의 AI 역량이 단순 도구 사용법을 넘어 공식 프레임워크와 교육과정으로 구조화되고 있습니다.</p></div>
-<div class="row"><h3>Institutional Transformation</h3><p>최근 2026년 자료에서 특히 강해진 신호로, AI 전략이 데이터·업무·거버넌스와 조직 역할까지 확장됩니다.</p></div>
-<div class="row"><h3>Student Experience</h3><p>학생의 실제 AI 사용과 기대, 지원효과를 측정하는 자료가 늘고 있어 앞으로 근거 축적을 계속 추적할 영역입니다.</p></div>
-</div></div>
-<div><div class="title">우선순위 기준</div><div class="panel">
-<div class="sideitem"><b>근거 반복성</b><small>복수 공식기관에서 같은 변화가 확인되는가</small></div>
-<div class="sideitem"><b>영향 범위</b><small>수업 하나가 아니라 대학 운영에 영향을 주는가</small></div>
-<div class="sideitem"><b>실행 단계</b><small>논의에서 실제 정책·파일럿·운영으로 이동했는가</small></div>
-<div class="sideitem"><b>신규성</b><small>최근 새롭게 강해지는 신호인가</small></div>
-</div></div></div>
-</section>
-<section id="timeline" class="view">
-<div class="title">2023 → 2026 변화 타임라인</div>
-<div class="count">자료의 발행일 자체가 아니라, 검증자료에서 반복적으로 확인되는 고등교육 AI 논의의 확장 방향을 봅니다.</div>
-<div class="feed">
-<div class="row"><div class="meta"><span class="pill">2023</span><span>초기 대응</span></div><h3>사용규칙 · 학업윤리 · 생성형 AI 가이드</h3><p>생성형 AI 등장 직후에는 허용범위, 책임 있는 사용, 과제별 규칙과 학업윤리가 중심 이슈로 등장합니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">2024</span><span>역량 체계화</span></div><h3>학생·교수자의 AI competency를 구조화</h3><p>AI를 사용할지 여부를 넘어 학생과 교육자가 어떤 지식·기술·가치를 갖춰야 하는지 프레임워크화하는 흐름이 강화됩니다.</p></div>
-<div class="row"><div class="meta"><span class="pill">2025</span><span>평가·교육과정 재설계</span></div><h3>AI를 전제로 assessment와 curriculum을 다시 설계</h3><p>프로그램 수준 평가, authentic/process-focused assessment, 대학 수준 AI 역량체계와 보편적 AI 교육 논의가 확대됩니다.</p></div>
-<div class="row"><div class="meta"><span class="pill core">2026</span><span>조직 전환</span></div><h3>AI가 대학 전략 · 데이터 · 업무 · 조직 운영으로 확장</h3><p>교수학습을 넘어 institutional transformation, AI governance, workforce transformation과 대학 간 협력체계가 주요 추적 영역으로 확대됩니다.</p></div>
-</div>
-<div class="box" style="margin-top:14px"><div class="eyebrow">HOW TO READ</div><div class="why">이 타임라인은 “모든 대학이 같은 순서로 발전했다”는 의미가 아닙니다. Radar에 축적된 공식 근거에서 어떤 논점이 추가·확장되고 있는지를 요약한 Intelligence layer입니다.</div></div>
-</section>
-<section id="evidence" class="view">
-<div class="title">변화 신호별 근거자료 바로 보기</div>
-<div class="count">신호를 선택하면 해당 해석을 뒷받침하는 공식자료만 모아봅니다.</div>
+
+
+
+<section class="view" id="evidence">
+<div class="title">Signal → Evidence 연결 보기</div>
+<div class="count">분석 결과에서 원문 근거까지 역추적할 수 있도록, 각 Signal에 배타적으로 연결된 공식 Evidence를 모아봅니다.</div>
 <div class="controls" style="grid-template-columns:1fr 2fr"><select id="signalSelect"></select><div class="box" style="padding:11px 14px"><span class="eyebrow">RULE</span> <span style="font-size:12px;color:var(--muted)">해석과 원문 근거를 분리해 표시 · 공식 원문으로 바로 이동</span></div></div>
-<div id="signalSummary" class="box" style="margin-bottom:12px"></div>
-<div id="signalEvidence" class="feed"></div>
+<div class="box" id="signalSummary" style="margin-bottom:12px"></div>
+<div class="feed" id="signalEvidence"></div>
 </section>
-<section id="library" class="view"><div class="title">전체 Evidence Library</div><div class="count">공식 원문이 확인된 자료만 표시 · 과거 핵심자료 + 신규자료 누적</div><table><thead><tr><th>날짜</th><th>기관</th><th>자료</th><th>주제</th><th>유형</th><th>원문</th></tr></thead><tbody id="lib"></tbody></table></section>
-</div><script>
-const D=__RADAR_EVIDENCE__; const groups=[...new Set(D.map(x=>x.group))],topics=[...new Set(D.map(x=>x.topic))],years=[...new Set(D.map(x=>x.year))].sort((a,b)=>b-a); document.getElementById('evidenceCount').textContent=D.length; document.getElementById('coverageYears').textContent=Math.min(...D.map(x=>x.year))+'–'+String(Math.max(...D.map(x=>x.year))).slice(-2);
-const card=x=>`<div class="row"><div class="meta"><span class="pill">${x.group}</span><span class="pill ${x.importance==='핵심'?'core':''}">${x.importance}</span><span>${x.date}</span> · <span>${x.type}</span></div><h3>${x.title}</h3><p><b>${x.institution}</b> — ${x.fact}</p><div class="why"><b>왜 볼 만한가:</b> ${x.why} &nbsp; <a target="_blank" href="${x.url}">공식 원문 ↗</a></div></div>`;
-
-const NAV_GROUPS={
- brief:[["today","오늘의 브리핑"],["decision","의사결정 요약"],["briefing","보고용 브리핑"]],
- signal:[["signals","변화 신호"],["scoring","신호 점수"],["timeline","변화 타임라인"],["evidence","신호별 근거"],["priority","우선순위"]],
- research:[["explore","자료 탐색"],["screening","자료 선별"],["batch2","추가 조사"],["researchq","조사 대기열"],["rqresults","조사 결과"],["registry","출처 목록"],["watchlist","관찰 목록"],["library","전체 자료"]],
- compare:[["compare","사례 비교"],["cases","대학 사례"],["gaps","근거 공백 분석"]],
- implementation:[["tracker","도입 현황"],["ladder","도입 단계"],["deepdive","도입 사례 분석"],["measurement","성과 측정"],["outcomes","성과 근거"],["impact","영향 추적"]],
- university:[["koreamap","20개 대학 현황"],["korea","국내 동향"],["coverage","커버리지"]],
- quality:[["corroboration","교차 검증"],["balance","출처 균형"],["confidence","근거 신뢰도"],["provenance","출처 추적"],["queue","검증 큐"],["assurance","품질·신뢰"]],
- admin:[["changes","변경 감지"],["runsim","실행 시뮬레이터"],["review","운영 대시보드"],["exporter","데이터 내보내기"],["handoff","운영 전환"],["release","배포 준비도"],["ops","운영 구조"]]
+<section class="view" id="library"><div class="title">전체 Evidence Library</div><div class="count">공식 원문이 확인된 자료만 표시 · 날짜는 정규화 가능한 값으로 안전 정렬하며 불완전 날짜는 원문 표기를 유지합니다.</div>
+<div class="controls" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin:12px 0"><select id="libYear"><option value="">전체 연도</option></select><select id="libGroup"><option value="">전체 기관유형</option></select><select id="libTopic"><option value="">전체 주제</option></select><select id="libSort"><option value="new">최신순</option><option value="old">오래된순</option></select></div>
+<div class="controls" style="grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px"><button id="expJson">JSON 다운로드</button><button id="expCsv">CSV 다운로드</button><button id="expSnap">스냅샷 다운로드</button></div>
+<div class="box" style="margin-bottom:12px"><div class="eyebrow">REVIEW HISTORY</div><div class="why">검토 이력이 있는 경계 사례는 동일 조건에서는 다시 묻지 않습니다. 원문·fact·단계 근거가 바뀐 경우에만 재검토 큐로 돌아옵니다.</div></div>
+<table><thead><tr><th>날짜</th><th>기관</th><th>자료</th><th>주제</th><th>유형</th><th>원문</th></tr></thead><tbody id="lib"></tbody></table></section>
+</div><script>const D=__RADAR_EVIDENCE__;
+const KDIS_POINT={
+ 'AI in Assessment':'과제·평가에서 AI 허용범위와 평가방식 설계 시 참고',
+ 'Assessment Redesign':'AI 시대 평가·과제 재설계 논의 시 참고',
+ 'AI-Enabled Assessment':'AI를 전제로 한 평가 설계 검토 시 참고',
+ 'AI Curriculum & Competencies':'학생 AI 역량·교육과정 설계 시 참고',
+ 'AI Competency':'학생 AI 역량 기준 설계 시 참고',
+ 'Faculty Development':'교수자 AI 역량개발 프로그램 설계 시 참고',
+ 'Faculty & Workforce':'교수자 지원·업무 변화 검토 시 참고',
+ 'Institutional Transformation':'대학 차원의 AI 전략·운영체계 검토 시 참고',
+ 'AI Governance':'AI 정책·거버넌스 설계 시 참고',
+ 'AI Collaboration & Ecosystem':'외부기관·대학 간 협력모델 검토 시 참고',
+ 'Academic Integrity & Trust':'AI 활용 원칙·학업윤리 안내 설계 시 참고',
+ 'AI Transparency & Trust':'AI 사용 공개·투명성 기준 검토 시 참고',
+ 'Student Experience & Success':'학생지원·학습경험 관점의 AI 활용 검토 시 참고',
+ 'Student AI Use & Literacy':'학생 AI 사용실태·리터러시 조사 설계 시 참고'
 };
-let currentGroup="brief";
-function openRadarView(id){
- document.querySelectorAll(".view").forEach(x=>x.classList.remove("on"));
- const target=document.getElementById(id);
- if(target) target.classList.add("on");
- document.querySelectorAll("#secondaryTabs button").forEach(x=>x.classList.toggle("on",x.dataset.v===id));
-}
-function renderSecondary(group,openFirst=true){
- currentGroup=group;
- document.querySelectorAll(".primary-tabs button").forEach(x=>x.classList.toggle("on",x.dataset.group===group));
- const items=NAV_GROUPS[group]||[];
- secondaryTabs.innerHTML=items.map(([id,label])=>`<button data-v="${id}">${label}</button>`).join("");
- secondaryTabs.querySelectorAll("button").forEach(b=>b.onclick=()=>openRadarView(b.dataset.v));
- if(openFirst&&items.length) openRadarView(items[0][0]);
-}
-document.querySelectorAll(".primary-tabs button").forEach(b=>b.onclick=()=>renderSecondary(b.dataset.group,true));
-renderSecondary("brief",false);
-openRadarView("today");
-
-brief.innerHTML=D.slice().sort((a,b)=>b.year-a.year||Number(b.importance==='핵심')-Number(a.importance==='핵심')).slice(0,7).map(card).join('');
-years.forEach(y=>year.insertAdjacentHTML('beforeend',`<option>${y}</option>`));groups.forEach(g=>{group.insertAdjacentHTML('beforeend',`<option>${g}</option>`);ca.insertAdjacentHTML('beforeend',`<option>${g}</option>`);cb.insertAdjacentHTML('beforeend',`<option>${g}</option>`)});topics.forEach(t=>{topic.insertAdjacentHTML('beforeend',`<option>${t}</option>`);ct.insertAdjacentHTML('beforeend',`<option>${t}</option>`)});
-function explore(){let z=q.value.toLowerCase(),r=D.filter(x=>(!year.value||x.year==year.value)&&(!group.value||x.group==group.value)&&(!topic.value||x.topic==topic.value)&&(!z||(x.title+x.institution+x.fact+x.why).toLowerCase().includes(z)));r.sort((a,b)=>sort.value==='old'?a.year-b.year:sort.value==='core'?Number(b.importance==='핵심')-Number(a.importance==='핵심')||b.year-a.year:b.year-a.year);count.textContent=`검증된 자료 ${r.length}건`;results.innerHTML=r.length?r.map(card).join(''):'<div class="empty">조건에 맞는 검증 자료가 없습니다.</div>'}q.oninput=year.onchange=group.onchange=topic.onchange=sort.onchange=explore;explore();
-cb.selectedIndex=Math.min(1,groups.length-1);function comp(){let t=ct.value,a=D.filter(x=>x.group==ca.value&&(!t||x.topic==t)),b=D.filter(x=>x.group==cb.value&&(!t||x.topic==t));la.innerHTML=a.length?a.map(card).join(''):'<div class="empty">자료 없음</div>';lb.innerHTML=b.length?b.map(card).join(''):'<div class="empty">자료 없음</div>'}ca.onchange=cb.onchange=ct.onchange=comp;comp();
-trend.innerHTML=topics.map(t=>{let r=D.filter(x=>x.topic==t),n=y=>r.filter(x=>x.year==y).length;return `<tr><td><b>${t}</b></td><td>${n(2023)}</td><td>${n(2024)}</td><td>${n(2025)}</td><td>${n(2026)}</td><td>${r.length>=3?'근거 축적 중':'초기 신호'}</td></tr>`}).join('');
-
-
-
-
-function evidenceStrength(n,groups){
- if(n>=5&&groups>=2)return "STRONG";
- if(n>=3&&groups>=2)return "GROWING";
- return "WATCH";
-}
-const assuranceTopics=["AI in Assessment","Academic Integrity & Trust","AI Transparency & Trust"];
-assuranceEvidence.innerHTML=D.filter(x=>assuranceTopics.includes(x.topic)&&(x.institution.includes("TEQSA")||x.institution==="QAA"||x.institution.includes("University")||x.institution==="Advance HE")).sort((a,b)=>b.year-a.year).slice(0,12).map(card).join("");
-function renderCoverage(){
- const g={}; D.forEach(x=>g[x.group]=(g[x.group]||0)+1);
- coverageGroups.innerHTML=Object.entries(g).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="row"><div class="meta"><span class="pill">${k}</span></div><h3>${v}건</h3><p>${Math.round(v/D.length*100)}% of verified corpus</p></div>`).join("");
- const t={}; D.forEach(x=>t[x.topic]=(t[x.topic]||0)+1);
- coverageTopics.innerHTML=Object.entries(t).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="row"><div class="meta"><span class="pill">${k}</span></div><h3>${v}건</h3><p>${evidenceStrength(v,new Set(D.filter(x=>x.topic===k).map(x=>x.group)).size)} · ${v<3?"근거 확충 우선":"근거 축적 중"}</p></div>`).join("");
-} renderCoverage();
-
-
-
-
-
-
-
-
-
-const RQ_NEW_IDS=["E0070", "E0071"];
-rqEvidence.innerHTML=D.filter(x=>RQ_NEW_IDS.includes(x.record_id)).map(card).join("");
-const RESEARCH_QUEUE=[
-{id:"RQ-001",p:"P1",region:"국내",area:"Assessment",task:"국내 대학의 실제 AI assessment redesign 사례 탐색",targets:"대학 공식 교수학습센터 · 학사/교육혁신 페이지",evidence:"rubric · process/oral assessment · authentic assessment · 시행 사례"},
-{id:"RQ-002",p:"P1",region:"국내",area:"Governance",task:"대학 AI governance·privacy·data·procurement 공식정책 탐색",targets:"교육부 · 대교협 · KERIS · 대학 공식 정책",evidence:"제도·지침·운영체계 · 책임주체"},
-{id:"RQ-003",p:"P1",region:"해외/글로벌",area:"Student",task:"AI가 학생 학습성과·지원성과에 미치는 실증근거 탐색",targets:"EDUCAUSE · Jisc · OECD · 대학 연구",evidence:"outcome · retention · learning · advising impact"},
-{id:"RQ-004",p:"P2",region:"국내",area:"Competency",task:"학생·교수자 AI competency framework 국내 사례 확충",targets:"대학 공식 교육과정 · 교수학습지원 · 정책기관",evidence:"역량 정의 · 필수교육 · curriculum integration"},
-{id:"RQ-005",p:"P2",region:"해외/글로벌",area:"Workforce",task:"교수·직원 업무 재설계와 AI workforce 변화 탐색",targets:"EDUCAUSE · Jisc · OECD · 대학 운영사례",evidence:"role redesign · workload · capability · workflow"},
-{id:"RQ-006",p:"P2",region:"국내",area:"Transformation",task:"AI를 교육·연구·행정 전체로 확장한 국내 대학 사례 탐색",targets:"대학 총장/본부 공식 전략 · 디지털혁신 조직",evidence:"institution-wide strategy · maturity · administration"},
-{id:"RQ-007",p:"P3",region:"해외/글로벌",area:"Trust",task:"AI disclosure·transparency·academic integrity 실행사례 확충",targets:"TEQSA · QAA · 대학 공식 policy",evidence:"disclosure rule · assessment security · implementation"},
-{id:"RQ-008",p:"P3",region:"국내",area:"Student",task:"국내 대학 AI 학생경험·지원 서비스의 실제 효과 탐색",targets:"대학 IR · 학생지원 · 교육성과 공식자료",evidence:"학생경험 · 만족도 · 성과 · 운영지표"}
+const kdisPoint=x=>KDIS_POINT[x.topic]||'KDIS 교육혁신 업무와의 관련성을 검토할 수 있는 참고 Evidence';
+const card=x=>`<div class="row"><div class="meta"><span class="pill">${x.group}</span><span class="pill ${x.importance==='핵심'?'core':''}">${x.importance}</span><span>${x.date||'상시 자료 · 날짜 미표기'}</span> · <span>${x.type}</span></div><h3>${x.title}</h3><p><b>${x.institution}</b> — ${x.fact}</p><div class="why"><b>왜 볼 만한가:</b> ${x.why}</div><div class="why" style="margin-top:6px"><b>KDIS 검토 포인트 <span style="font-weight:400">(분석)</span>:</b> ${kdisPoint(x)} &nbsp; <a target="_blank" href="${x.url}">공식 원문 ↗</a></div></div>`;
+const yrs=D.map(x=>Number(x.year)).filter(Number.isFinite);
+document.getElementById('evidenceCount').textContent=D.length;
+document.getElementById('coverageYears').textContent=Math.min(...yrs)+'–'+String(Math.max(...yrs)).slice(-2);
+const dated=D.filter(x=>/^\d{4}-\d{2}/.test(String(x.date||'')));
+const latestMonth=dated.map(x=>String(x.date).slice(0,7)).sort().at(-1);
+const monthRows=latestMonth?D.filter(x=>String(x.date||'').startsWith(latestMonth)):[];
+const topicCounts=monthRows.reduce((a,x)=>(a[x.topic]=(a[x.topic]||0)+1,a),{});
+const topTopics=Object.entries(topicCounts).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([k,v])=>`${k} ${v}건`).join(' · ');
+if(document.getElementById('latestUpdate')) document.getElementById('latestUpdate').innerHTML=latestMonth?`${latestMonth.replace('-','년 ')}월 신규 Evidence <b>${monthRows.length}건</b>${topTopics?` · ${topTopics}`:''}`:`최신 Evidence ${D.length}건`;
+document.getElementById('brief').innerHTML=D.slice().sort((a,b)=>dateKey(b.date)-dateKey(a.date)||Number(b.importance==='핵심')-Number(a.importance==='핵심')).slice(0,7).map(card).join('');
+function openView(id){document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));document.getElementById(id)?.classList.add('on');document.querySelectorAll('#mainTabs button').forEach(x=>x.classList.toggle('on',x.dataset.v===id));}
+document.querySelectorAll('#mainTabs button').forEach(b=>b.onclick=()=>openView(b.dataset.v));
+// 2026 사업 참여 20개교: ladder(높낮이)와 접근 유형(종류)을 분리해 비교
+const UNI20=[
+ {region:'수도권',name:'덕성여자대학교',db:'덕성여자대학교'},
+ {region:'수도권',name:'동국대학교',db:'동국대학교 서울캠퍼스'},
+ {region:'수도권',name:'서울여자대학교',db:'서울여자대학교'},
+ {region:'수도권',name:'세종대학교',db:'세종대학교'},
+ {region:'수도권',name:'용인대학교',db:'용인대학교'},
+ {region:'수도권',name:'한국외국어대학교',db:'한국외국어대학교'},
+ {region:'비수도권',name:'건국대학교(GLOCAL)',db:'건국대학교 GLOCAL캠퍼스'},
+ {region:'비수도권',name:'경운대학교',db:'경운대학교'},
+ {region:'비수도권',name:'국립경국대학교',db:'국립경국대학교'},
+ {region:'비수도권',name:'국립한밭대학교',db:'국립한밭대학교'},
+ {region:'비수도권',name:'동국대학교(WISE)',db:'동국대학교 WISE캠퍼스'},
+ {region:'비수도권',name:'동명대학교',db:'동명대학교'},
+ {region:'비수도권',name:'동서대학교',db:'동서대학교'},
+ {region:'비수도권',name:'동신대학교',db:'동신대학교'},
+ {region:'비수도권',name:'동의대학교',db:'동의대학교'},
+ {region:'비수도권',name:'부산외국어대학교',db:'부산외국어대학교'},
+ {region:'비수도권',name:'송원대학교',db:'송원대학교'},
+ {region:'비수도권',name:'전주대학교',db:'전주대학교'},
+ {region:'비수도권',name:'창신대학교',db:'창신대학교'},
+ {region:'비수도권',name:'한라대학교',db:'한라대학교'}
 ];
-function showResearchQueue(){
- let r=RESEARCH_QUEUE.filter(x=>(!rqPriority.value||x.p===rqPriority.value)&&(!rqRegion.value||x.region===rqRegion.value));
- rqCount.textContent=`조사 작업 ${r.length}개`;
- rqResults.innerHTML=r.map(x=>`<div class="row"><div class="meta"><span class="pill ${x.p==="P1"?"core":""}">${x.p}</span><span>${x.id} · ${x.region} · ${x.area}</span></div><h3>${x.task}</h3><p><b>우선 출처:</b> ${x.targets}</p><div class="why"><b>찾아야 할 Evidence:</b> ${x.evidence}</div></div>`).join("");
-}
-rqPriority.onchange=rqRegion.onchange=showResearchQueue;showResearchQueue();
-const GAP_AXES={
-"Assessment":["AI in Assessment"],
-"Competency":["AI Curriculum & Competencies","Student AI Use & Literacy"],
-"Governance":["AI Policy & Governance"],
-"Transformation":["Institutional Transformation"],
-"Student":["Student Experience & Success"],
-"Trust":["Academic Integrity & Trust","AI Transparency & Trust"]
+const APPROACH={
+ '덕성여자대학교':['인프라 제공','조직·추진체계'],
+ '동국대학교 서울캠퍼스':['조직·추진체계'],
+ '서울여자대학교':['교과·교육과정'],
+ '세종대학교':['교과·교육과정'],
+ '용인대학교':['교과·교육과정'],
+ '한국외국어대학교':['조직·추진체계'],
+ '건국대학교 GLOCAL캠퍼스':['교과·교육과정','교수자 역량'],
+ '경운대학교':['유형 판정 보류'],
+ '국립경국대학교':['교과·교육과정'],
+ '국립한밭대학교':['교과·교육과정','조직·추진체계'],
+ '동국대학교 WISE캠퍼스':['교과·교육과정','조직·추진체계'],
+ '동명대학교':['조직·추진체계'],
+ '동서대학교':['교과·교육과정'],
+ '동신대학교':['교과·교육과정','교수자 역량'],
+ '동의대학교':['전공 특화','교과·교육과정'],
+ '부산외국어대학교':['전공 특화','교과·교육과정'],
+ '송원대학교':['전공 특화','교과·교육과정'],
+ '전주대학교':['교과·교육과정','조직·추진체계'],
+ '창신대학교':['제도 개편','교수자 역량'],
+ '한라대학교':['교과·교육과정','조직·추진체계']
 };
-function gapLevel(n){return n>=4?"GOOD":n>=2?"BUILD":"GAP"}
-function renderGapMatrix(){
- const groups=[...new Set(D.map(x=>x.group))].sort();
- const gaps=[];
- gapBody.innerHTML=groups.map(g=>{
-   const cells=Object.entries(GAP_AXES).map(([axis,topics])=>{
-     const n=D.filter(x=>x.group===g&&topics.includes(x.topic)).length;
-     if(n<=1)gaps.push({group:g,axis,n});
-     return `<td><span class="pill ${n>=4?"core":""}">${gapLevel(n)}</span> ${n}</td>`;
-   }).join("");
-   return `<tr><td><b>${g}</b></td>${cells}</tr>`;
- }).join("");
- gapQueue.innerHTML=gaps.length?gaps.slice(0,10).map((x,i)=>`<div class="sideitem"><b>${i+1}. ${x.group} · ${x.axis}</b><small>현재 검증 Evidence ${x.n}건 — 신규 공식자료 discovery 우선</small></div>`).join(""):'<div class="sideitem"><b>우선 GAP 없음</b><small>현재 기준상 모든 축에 2건 이상 축적</small></div>';
+const LEVEL_RANK={L0:0,L1:1,L2:2,L3:3,L4:4,L5:5};
+function trackerInfo(u){
+ const rr=D.filter(x=>x.institution===u.db&&x.ladder_level&&x.ladder_level!=='N/A');
+ let level='L1';
+ rr.forEach(x=>{if((LEVEL_RANK[x.ladder_level]??-1)>LEVEL_RANK[level])level=x.ladder_level;});
+ const ids=rr.map(x=>x.record_id);
+ const defaultNext=level==='L1'?'실제 개설·운영 근거':level==='L2'?'참여자 수 · 이용/이수 데이터':level==='L3'?'학습성과·효과 측정 근거':'지속적 개선 근거';
+ // 기본은 단계 기반(A안). fact에 숫자·시점·구체 프로그램처럼 검증 가능한 약속이 명시된 경우에만 B안으로 구체화합니다.
+ const SPECIFIC_NEXT={
+  '세종대학교':'계획한 24개 교과목의 실제 개설·운영 근거',
+  '용인대학교':'계획한 교양선택 4개 교과 · AI 기초전공 · 7개 AI 활용 소단위전공의 실제 개설·운영 근거',
+  '한라대학교':'2026학년도 2학기 H-자유학기제의 실제 운영 근거',
+  '한국외국어대학교':'2026학년도 2학기 AI 기본교육과정의 실제 운영 근거',
+  '동의대학교':'개발 준비 중인 MD 교과의 실제 개설·운영 근거'
+ };
+ const nextCheck=(level==='L1'&&SPECIFIC_NEXT[u.db])?SPECIFIC_NEXT[u.db]:defaultNext;
+ return {...u,level,ids,nextCheck,approach:APPROACH[u.db]||['유형 판정 보류']};
 }
-renderGapMatrix();
-const CMP_GROUPS=[...new Set(D.map(x=>x.group))].sort();
-CMP_GROUPS.forEach(v=>{cmpA.insertAdjacentHTML("beforeend",`<option>${v}</option>`);cmpB.insertAdjacentHTML("beforeend",`<option>${v}</option>`)});
-if(CMP_GROUPS.length>1)cmpB.selectedIndex=1;
-[...new Set(D.map(x=>x.topic))].sort().forEach(v=>cmpTopic.insertAdjacentHTML("beforeend",`<option>${v}</option>`));
-function cmpCardSet(group,topic){
- return D.filter(x=>x.group===group&&(!topic||x.topic===topic)).sort((a,b)=>b.year-a.year);
-}
-function cmpStats(r){
- const inst=new Set(r.map(x=>x.institution)).size;
- const topics=new Set(r.map(x=>x.topic)).size;
- const core=r.filter(x=>x.importance==="핵심").length;
- return `<div class="eyebrow">CURRENT CORPUS</div><div class="big">${r.length}건</div><div class="why">기관 ${inst} · 주제 ${topics} · 핵심 Evidence ${core}</div>`;
-}
-function renderCompare(){
- const a=cmpCardSet(cmpA.value,cmpTopic.value),b=cmpCardSet(cmpB.value,cmpTopic.value);
- cmpATitle.textContent=cmpA.value;cmpBTitle.textContent=cmpB.value;
- cmpAStats.innerHTML=cmpStats(a);cmpBStats.innerHTML=cmpStats(b);
- cmpAResults.innerHTML=a.length?a.slice(0,12).map(card).join(""):'<div class="empty">현재 검증자료 없음</div>';
- cmpBResults.innerHTML=b.length?b.slice(0,12).map(card).join(""):'<div class="empty">현재 검증자료 없음</div>';
-}
-cmpA.onchange=cmpB.onchange=cmpTopic.onchange=renderCompare;renderCompare();
-
-
-const UNI20=[{"region": "수도권", "institution": "덕성여자대학교"}, {"region": "수도권", "institution": "동국대학교"}, {"region": "수도권", "institution": "서울여자대학교"}, {"region": "수도권", "institution": "세종대학교"}, {"region": "수도권", "institution": "용인대학교"}, {"region": "수도권", "institution": "한국외국어대학교"}, {"region": "비수도권", "institution": "건국대학교(GLOCAL)"}, {"region": "비수도권", "institution": "경운대학교"}, {"region": "비수도권", "institution": "국립경국대학교"}, {"region": "비수도권", "institution": "국립한밭대학교"}, {"region": "비수도권", "institution": "동국대학교(WISE)"}, {"region": "비수도권", "institution": "동명대학교"}, {"region": "비수도권", "institution": "동서대학교"}, {"region": "비수도권", "institution": "동신대학교"}, {"region": "비수도권", "institution": "동의대학교"}, {"region": "비수도권", "institution": "부산외국어대학교"}, {"region": "비수도권", "institution": "송원대학교"}, {"region": "비수도권", "institution": "전주대학교"}, {"region": "비수도권", "institution": "창신대학교"}, {"region": "비수도권", "institution": "한라대학교"}];
-uni20.innerHTML=`<table><thead><tr><th>권역</th><th>대학</th><th>선정</th><th>구현 Evidence</th></tr></thead><tbody>${UNI20.map(x=>`<tr><td>${x.region}</td><td><b>${x.institution}</b></td><td><span class="pill core">2026 선정</span></td><td><span class="pill">추적 예정</span></td></tr>`).join("")}</tbody></table>`;
-const CORR={
-"Assessment Redesign":["AI in Assessment"],
-"AI Competency":["AI Curriculum & Competencies","Student AI Use & Literacy"],
-"Governance":["AI Policy & Governance"],
-"Institutional Transformation":["Institutional Transformation"],
-"Student Outcomes":["Student Experience & Success"],
-"Trust & Integrity":["Academic Integrity & Trust","AI Transparency & Trust"]
-};
-const corrRows=Object.entries(CORR).map(([name,topics])=>{
- const r=D.filter(x=>topics.includes(x.topic)), families=new Set(r.map(x=>x.group)), inst=new Set(r.map(x=>x.institution));
- const impl=r.filter(x=>x.implementation_evidence).length;
- const state=families.size>=3&&inst.size>=4&&impl>=2?"CORROBORATED":families.size>=2?"EMERGING":"SINGLE-STREAM";
- return {name,n:r.length,f:families.size,i:inst.size,impl,state};
-});
-corrTable.innerHTML=`<table><thead><tr><th>Signal</th><th>Evidence</th><th>Source families</th><th>Institutions</th><th>Implementation</th><th>Status</th></tr></thead><tbody>${corrRows.map(x=>`<tr><td><b>${x.name}</b></td><td>${x.n}</td><td>${x.f}</td><td>${x.i}</td><td>${x.impl}</td><td><span class="pill ${x.state==="CORROBORATED"?"core":""}">${x.state}</span></td></tr>`).join("")}</tbody></table>`;
-const confCounts=D.reduce((a,x)=>(a[x.confidence_label]=(a[x.confidence_label]||0)+1,a),{});
-confidenceSummary.innerHTML=["HIGH","MEDIUM","LOW"].map(k=>`<div class="row"><h3>${k}</h3><p>${confCounts[k]||0} records</p></div>`).join("");
-function downloadText(name,text,type){
- const blob=new Blob([text],{type:type||"text/plain;charset=utf-8"});
- const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href);
- exportMsg.textContent=`${name} 생성됨`;
-}
-document.getElementById("exportJson").onclick=()=>downloadText("radar_verified_evidence.json",JSON.stringify(D,null,2),"application/json");
-document.getElementById("exportCsv").onclick=()=>{
- const fields=["record_id","institution","group","topic","title","date","year","fact","why","url","type","importance","verification_status","source_authority","evidence_class"];
- const esc=v=>`"${String(v??"").replaceAll('"','""')}"`;
- const csv=[fields.join(","),...D.map(x=>fields.map(f=>esc(x[f])).join(","))].join("\\n");
- downloadText("radar_verified_evidence.csv","\\ufeff"+csv,"text/csv;charset=utf-8");
-};
-document.getElementById("exportSnapshot").onclick=()=>downloadText("radar_snapshot_v5.2.json",JSON.stringify({version:"5.2",evidence_count:D.length,evidence:D},null,2),"application/json");
-const BRIEF_TEXT=`[Higher Education AI Radar — Executive Brief]
-
-핵심 변화
-1. 평가 재설계: AI 허용/금지에서 학습과정 증거, authentic assessment, learning assurance로 확장.
-2. AI Competency: 학생·교수자의 AI literacy를 윤리, 검증, 비판적 판단, 전공 적용까지 포함해 구조화.
-3. Institutional Transformation: 데이터, 거버넌스, 업무, 조달, 조직 역량까지 AI 전략 범위 확대.
-4. Watch: 학생성과·지원·진로·업무효율의 실제 효과를 보여주는 근거는 계속 검증 필요.
-
-검토 질문
-- 현재 평가방식은 AI 환경에서도 학습을 제대로 확인하는가?
-- 학생과 교수자에게 필요한 AI 역량을 명시하고 있는가?
-- 데이터·privacy·책임·조달 원칙은 있는가?
-- AI 도입 효과를 어떤 지표로 확인할 것인가?
-
-주의: 위 내용은 Radar의 복수 검증 Evidence를 종합한 Intelligence 요약이며 개별 기관의 공식 입장을 그대로 인용한 것이 아님.`;
-document.getElementById("copyBrief").onclick=async()=>{
- try{await navigator.clipboard.writeText(BRIEF_TEXT);copyMsg.textContent="복사됨";}catch(e){copyMsg.textContent="브라우저 권한으로 복사 불가";}
-};
-function renderQA(){
- qaVerified.textContent=D.filter(x=>x.verification_status==="verified").length;
- qaReview.textContent=D.filter(x=>x.verification_status==="needs_review").length;
- qaCorrection.textContent=D.filter(x=>x.correction_flag).length;
- qaLinks.textContent=D.filter(x=>x.link_health==="unchecked").length;
-} renderQA();
-const REGISTRY=[
-{name:"교육부",region:"국내",type:"정책·공공기관",focus:"대학 AI 정책 · 재정지원 · 교육과정 · 제도 변화",priority:"A"},
-{name:"한국대학교육협의회",region:"국내",type:"정책·공공기관",focus:"대학 정책 · 교수학습 · 고등교육 공동 이슈",priority:"A"},
-{name:"KERIS",region:"국내",type:"정책·공공기관",focus:"교육 디지털·AI 정책 · 연구 · 가이드",priority:"A"},
-{name:"NIA",region:"국내",type:"정책·공공기관",focus:"국가 AI 정책 · 제도 · 공공 AI 동향",priority:"B"},
-{name:"한국대학IR협의회",region:"국내",type:"고등교육 리딩기관",focus:"대학 IR · 데이터 기반 의사결정 · AI 연계",priority:"B"},
-{name:"TEQSA",region:"해외",type:"규제·품질보증",focus:"AI assessment · academic integrity · quality assurance",priority:"A"},
-{name:"QAA",region:"해외",type:"규제·품질보증",focus:"AI assessment · quality · sector implementation",priority:"A"},
-{name:"EDUCAUSE",region:"글로벌",type:"고등교육 리딩기관",focus:"AI strategy · teaching · assessment · student experience · workforce",priority:"A"},
-{name:"Jisc",region:"해외",type:"고등교육 리딩기관",focus:"AI maturity · assessment · digital transformation",priority:"A"},
-{name:"Advance HE",region:"해외",type:"고등교육 리딩기관",focus:"teaching · assessment · faculty practice",priority:"B"},
-{name:"UNESCO IESALC",region:"글로벌",type:"고등교육 리딩기관",focus:"higher education AI policy · competency · transformation",priority:"A"},
-{name:"OECD",region:"글로벌",type:"정책·공공기관",focus:"AI · skills · tertiary education · policy evidence",priority:"B"},
-{name:"Stanford University",region:"해외",type:"대학",focus:"assessment · teaching · academic integrity",priority:"B"},
-{name:"Harvard University",region:"해외",type:"대학",focus:"teaching · assessment · institutional AI resources",priority:"B"},
-{name:"Cornell University",region:"해외",type:"대학",focus:"assignment design · course policy",priority:"B"},
-{name:"UCLA",region:"해외",type:"대학",focus:"student AI use · teaching strategy",priority:"B"},
-{name:"서울대학교",region:"국내",type:"대학",focus:"AI-native campus · education · research · administration",priority:"A"},
-{name:"고려대학교",region:"국내",type:"대학",focus:"course-level AI policy · academic operations",priority:"B"},
-{name:"가천대학교",region:"국내",type:"대학",focus:"AI education · institutional adoption",priority:"B"},
-{name:"태재미래교육포럼",region:"국내",type:"고등교육 리딩기관",focus:"미래교육 · AI 교육 담론 및 공식 발간자료",priority:"B"}
-];
-function showRegistry(){
- const r=REGISTRY.filter(x=>(!regRegion.value||x.region===regRegion.value)&&(!regType.value||x.type===regType.value));
- registryCards.innerHTML=r.map(x=>`<div class="row"><div class="meta"><span class="pill ${x.priority==="A"?"core":""}">Priority ${x.priority}</span><span>${x.region} · ${x.type}</span></div><h3>${x.name}</h3><p>${x.focus}</p></div>`).join("");
-}
-regRegion.onchange=regType.onchange=showRegistry;showRegistry();
-const SCORE_SIGNALS={
-"Assessment Redesign":["AI in Assessment"],
-"AI Competency":["AI Curriculum & Competencies","Student AI Use & Literacy"],
-"Institutional Transformation":["Institutional Transformation","AI Policy & Governance"],
-"Faculty & Workforce":["Faculty Development","Faculty & Workforce"],
-"Student Experience":["Student Experience & Success"],
-"Trust & Integrity":["Academic Integrity & Trust","AI Transparency & Trust"]
-};
-function calcSignal(name,ts){
- const r=D.filter(x=>ts.includes(x.topic));
- const diversity=new Set(r.map(x=>x.group)).size;
- const auth=r.length?r.reduce((a,x)=>a+(x.authority_score||1),0)/(r.length*3):0;
- const impl=r.filter(x=>x.implementation_evidence).length;
- const vol=Math.min(r.length/8,1);
- const div=Math.min(diversity/3,1);
- const imp=r.length?impl/r.length:0;
- const score=Math.round((vol*.30+div*.25+auth*.20+imp*.25)*100);
- const status=score>=70?"STRONG":score>=45?"GROWING":"WATCH";
- return {name,n:r.length,diversity,auth:Math.round(auth*100),impl,score,status};
-}
-const scoreRows=Object.entries(SCORE_SIGNALS).map(([n,t])=>calcSignal(n,t)).sort((a,b)=>b.score-a.score);
-scoreBody.innerHTML=scoreRows.map(x=>`<tr><td><b>${x.name}</b></td><td>${x.n}</td><td>${x.diversity}</td><td>${x.auth}%</td><td>${x.impl}</td><td><b>${x.score}</b></td><td><span class="pill ${x.status==="STRONG"?"core":""}">${x.status}</span></td></tr>`).join("");
-function showProv(){
- let q=provQ.value.toLowerCase();
- let r=D.filter(x=>(!provTier.value||x.source_authority===provTier.value)&&(!provStatus.value||x.verification_status===provStatus.value)&&(!q||(x.institution+x.title).toLowerCase().includes(q)));
- provCount.textContent=`Evidence ${r.length}건`;
- provBody.innerHTML=r.map(x=>`<tr><td>${x.record_id}</td><td>Tier ${x.source_authority}</td><td>${x.verification_status}</td><td>${x.institution}</td><td>${x.title}</td><td><a target="_blank" href="${x.url}">원문 ↗</a></td></tr>`).join("");
-}
-provTier.onchange=provStatus.onchange=provQ.oninput=showProv;showProv();
-const UNIVERSITY_DATA=D.filter(x=>x.group==="해외 대학"||x.group==="국내 대학");
-[...new Set(UNIVERSITY_DATA.map(x=>x.institution))].sort().forEach(v=>caseUni.insertAdjacentHTML("beforeend",`<option>${v}</option>`));
-[...new Set(UNIVERSITY_DATA.map(x=>x.topic))].sort().forEach(v=>caseTopic.insertAdjacentHTML("beforeend",`<option>${v}</option>`));
-[...new Set(UNIVERSITY_DATA.map(x=>x.year))].sort((a,b)=>b-a).forEach(v=>caseYear.insertAdjacentHTML("beforeend",`<option>${v}</option>`));
-let caseGroup="";
-function showCases(){
- let r=UNIVERSITY_DATA.filter(x=>(!caseGroup||x.group===caseGroup)&&(!caseUni.value||x.institution===caseUni.value)&&(!caseTopic.value||x.topic===caseTopic.value)&&(!caseYear.value||x.year==caseYear.value));
- r.sort((a,b)=>b.year-a.year||Number(b.importance==="핵심")-Number(a.importance==="핵심"));
- caseCount.textContent=`공식 대학 사례 ${r.length}건`;
- caseResults.innerHTML=r.length?r.map(card).join(""):'<div class="empty">조건에 맞는 검증 사례가 없습니다.</div>';
-}
-caseUni.onchange=caseTopic.onchange=caseYear.onchange=showCases;
-document.querySelectorAll(".casequick").forEach(b=>b.onclick=()=>{caseGroup=b.dataset.q;showCases();});
-showCases();
+const trackerRows=UNI20.map(trackerInfo).sort((a,b)=>LEVEL_RANK[b.level]-LEVEL_RANK[a.level]||a.name.localeCompare(b.name,'ko'));
+const trackerCounts=trackerRows.reduce((a,x)=>(a[x.level]=(a[x.level]||0)+1,a),{});
+if(document.getElementById('trackerSummary')) document.getElementById('trackerSummary').innerHTML=`<div class="eyebrow">AUTO-CALCULATED FROM LADDER</div><div class="big">L2 ${trackerCounts.L2||0}개교 · L1 ${trackerCounts.L1||0}개교</div><div class="why">단계는 실행의 높낮이, 접근 유형은 무엇을 바꾸고 있는지를 보여줍니다. 두 축은 별도로 읽습니다.</div>`;
+if(document.getElementById('trackerBody')) document.getElementById('trackerBody').innerHTML=trackerRows.map(x=>`<tr><td>${x.region}</td><td><b>${x.name}</b></td><td><span class="pill ${x.level==='L2'?'core':''}">${x.level}</span></td><td>${x.approach.map(a=>`<span class="pill">${a}</span>`).join(' ')}</td><td>${x.ids.join(' · ')||'—'}</td><td>${x.nextCheck}</td></tr>`).join('');
+const approachCounts={};
+trackerRows.forEach(x=>x.approach.forEach(a=>approachCounts[a]=(approachCounts[a]||0)+1));
+const approachOrder=['제도 개편','인프라 제공','교수자 역량','교과·교육과정','전공 특화','조직·추진체계','유형 판정 보류'];
+if(document.getElementById('approachSummary')) document.getElementById('approachSummary').innerHTML=approachOrder.filter(a=>approachCounts[a]).map(a=>`<div class="sideitem"><b>${a}</b><small>${approachCounts[a]}개교 · 중복 태그 허용</small></div>`).join('')+`<div class="why" style="margin-top:8px">접근 유형은 현재 Registry의 fact에 직접 확인되는 요소만 태그했습니다. 단계와 달리 우열이 없으며 한 대학에 복수 유형을 허용합니다.</div>`;
+const participantSet=new Set(UNI20.map(x=>x.db));
+const participantAssessment=D.filter(x=>participantSet.has(x.institution)&&['AI in Assessment','Assessment Redesign','AI-Enabled Assessment'].includes(x.topic));
+const overseasUni=D.filter(x=>x.group==='해외 대학');
+const overseasAssessment=overseasUni.filter(x=>['AI in Assessment','Assessment Redesign','AI-Enabled Assessment'].includes(x.topic));
+if(document.getElementById('assessmentCompare')) document.getElementById('assessmentCompare').innerHTML=`<div class="sideitem"><b>2026 사업 참여 20개교</b><small>평가 재설계 Evidence ${participantAssessment.length}건</small></div><div class="sideitem"><b>해외 대학 corpus</b><small>평가 재설계 Evidence ${overseasAssessment.length}건 / 해외 대학 Evidence ${overseasUni.length}건</small></div><div class="why" style="margin-top:8px"><b>현재 Registry에서:</b> 사업 참여 20개교는 AI 교육과정·조직·교수자 지원 중심이고, 평가 재설계를 명시한 Evidence는 0건입니다. 반면 해외 대학 corpus에는 평가 재설계 근거가 반복됩니다. 이는 전체 국내·해외 대학 일반화가 아니라 <b>현재 등록 범위의 비교 결과</b>입니다.</div>`;
+// Evidence Library
+const lib=document.getElementById('lib');
+function dateKey(v){const s=String(v||'');let m=s.match(/^(\d{4})-(\d{2})-(\d{2})$/);if(m)return +`${m[1]}${m[2]}${m[3]}`;m=s.match(/^(\d{4})-(\d{2})$/);if(m)return +`${m[1]}${m[2]}00`;m=s.match(/^(\d{4})/);return m?+`${m[1]}0000`:0;}
+function fillSel(id,vals){const el=document.getElementById(id);[...new Set(vals.filter(Boolean))].sort().forEach(v=>el.insertAdjacentHTML('beforeend',`<option>${v}</option>`));}
+fillSel('libYear',D.map(x=>String(x.year||'')));fillSel('libGroup',D.map(x=>x.group));fillSel('libTopic',D.map(x=>x.topic));
+function filteredLibrary(){let r=D.filter(x=>(!libYear.value||String(x.year)==libYear.value)&&(!libGroup.value||x.group==libGroup.value)&&(!libTopic.value||x.topic==libTopic.value));r.sort((a,b)=>(dateKey(b.date)-dateKey(a.date))||String(b.id||'').localeCompare(String(a.id||'')));if(libSort.value==='old')r.reverse();return r;}
+function renderLib(){if(!lib)return;const r=filteredLibrary();lib.innerHTML=r.length?r.map(x=>`<tr><td>${x.date||'상시 자료 · 날짜 미표기'}</td><td><b>${x.institution}</b></td><td>${x.title}</td><td>${x.topic}</td><td>${x.type}</td><td><a target="_blank" href="${x.url}">원문 ↗</a></td></tr>`).join(''):'<tr><td colspan="6" class="empty">조건에 맞는 Evidence가 없습니다.</td></tr>';}
+['libYear','libGroup','libTopic','libSort'].forEach(id=>document.getElementById(id)?.addEventListener('change',renderLib));renderLib();
+function dl(name,text,type='text/plain'){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+document.getElementById('expJson')?.addEventListener('click',()=>dl('ai_radar_evidence.json',JSON.stringify(filteredLibrary(),null,2),'application/json'));
+document.getElementById('expCsv')?.addEventListener('click',()=>{const r=filteredLibrary(),ks=['id','institution','group','topic','title','date','year','fact','why','url','type','ladder_level','review_decision','review_reason','review_date'];const esc=v=>'"'+String(v??'').replaceAll('"','""')+'"';dl('ai_radar_evidence.csv',[ks.join(','),...r.map(x=>ks.map(k=>esc(x[k])).join(','))].join('\n'),'text/csv;charset=utf-8')});
+document.getElementById('expSnap')?.addEventListener('click',()=>dl('ai_radar_snapshot.json',JSON.stringify({generated_at:new Date().toISOString(),build:'presentation-slim-v12',evidence_count:D.length,filters:{year:libYear.value,group:libGroup.value,topic:libTopic.value},records:filteredLibrary()},null,2),'application/json'));
+// Signal evidence selector: exclusive topic families
 const SIGNALS={
-"평가 재설계":{
- topics:["AI in Assessment"],
- summary:"AI 대응의 중심이 탐지·금지에서 학습성과 정렬, authentic/process-focused assessment, 명시적 AI 사용조건으로 이동하는 흐름입니다."
-},
-"학생 AI 역량":{
- topics:["AI Curriculum & Competencies","Student AI Use & Literacy"],
- summary:"학생이 AI를 실제로 사용하는 현실을 전제로 AI literacy와 competency를 보편적 학습성과로 다루는 흐름입니다."
-},
-"대학 AI 거버넌스":{
- topics:["AI Policy & Governance","Institutional Transformation"],
- summary:"AI 대응 범위가 수업 규칙을 넘어 정책, 데이터, 조직, 지원체계와 대학 전략으로 확대되는 흐름입니다."
-},
-"교수·직원 역량":{
- topics:["Faculty Development","Faculty & Workforce"],
- summary:"AI 전환이 도구 제공보다 교수자와 직원의 역할·역량·업무 재설계를 요구하는 흐름입니다."
-}};
-Object.keys(SIGNALS).forEach(k=>signalSelect.insertAdjacentHTML("beforeend",`<option>${k}</option>`));
-function showSignal(){
- const x=SIGNALS[signalSelect.value];
- const r=D.filter(d=>x.topics.includes(d.topic));
- const gs=[...new Set(r.map(d=>d.group))];
- signalSummary.innerHTML=`<div class="eyebrow">SIGNAL INTERPRETATION</div><div class="big">${signalSelect.value}</div><div class="why">${x.summary}</div><div class="count" style="margin-top:8px">공식 근거 ${r.length}건 · 기관 유형 ${gs.length}개</div>`;
- signalEvidence.innerHTML=r.length?r.sort((a,b)=>b.year-a.year).map(card).join(""):'<div class="empty">아직 검증 근거가 부족합니다.</div>';
-}
-signalSelect.onchange=showSignal;showSignal();
-lib.innerHTML=D.slice().sort((a,b)=>b.year-a.year).map(x=>`<tr><td>${x.date}</td><td>${x.institution}</td><td><b>${x.title}</b></td><td>${x.topic}</td><td>${x.type}</td><td><a target="_blank" href="${x.url}">보기 ↗</a></td></tr>`).join('');
-
-async function syncDbStats(){try{const r=await fetch("/api/stats",{cache:"no-store"});if(!r.ok)return;const s=await r.json();document.querySelectorAll("[data-db-count]").forEach(x=>x.textContent=s.evidence);const c=document.getElementById("dbEvidenceCount");if(c)c.textContent=s.evidence;const d=document.getElementById("dataAsOf");if(d&&s.as_of)d.textContent=s.as_of.replaceAll("-",".");}catch(e){console.warn("stats sync failed",e);}}
-syncDbStats();
-</script></body></html>
+ 'Assessment Redesign':['AI in Assessment','Assessment Redesign','AI-Enabled Assessment'],
+ 'AI Competency':['AI Curriculum & Competencies','AI Competency','Faculty Development'],
+ 'Institutional Transformation':['Institutional Transformation','AI Governance','AI Collaboration & Ecosystem'],
+ 'Faculty & Workforce':['Faculty & Workforce','Faculty Development'],
+ 'Trust & Integrity':['Academic Integrity & Trust','AI Transparency & Trust'],
+ 'Student Experience':['Student Experience & Success','Student AI Use & Literacy']};
+const ss=document.getElementById('signalSelect');
+if(ss){Object.keys(SIGNALS).forEach(k=>ss.insertAdjacentHTML('beforeend',`<option>${k}</option>`)); const render=()=>{const k=ss.value,r=D.filter(x=>SIGNALS[k].includes(x.topic));document.getElementById('signalSummary').innerHTML=`<b>${k}</b> · 연결 Evidence ${r.length}건`;document.getElementById('signalEvidence').innerHTML=r.length?r.map(card).join(''):'<div class="empty">연결된 Evidence가 없습니다.</div>';};ss.onchange=render;render();}
+openView('today');</script></body></html>
