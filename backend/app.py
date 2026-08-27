@@ -39,6 +39,9 @@ def root():
    "confidence_label":x["confidence_label"],"status":x["status"]})
  payload=json.dumps(mapped,ensure_ascii=False)
  page=page.replace("__RADAR_EVIDENCE__",payload)
+ stats=q("""SELECT COUNT(*) n, MAX(evidence_date) as_of FROM evidence WHERE status!='deleted'""")[0]
+ page=page.replace("__DB_EVIDENCE_COUNT__",str(stats["n"]))
+ page=page.replace("__DB_AS_OF__",stats["as_of"] or "—")
  return Response(page,mimetype="text/html")
 @app.get("/health")
 def health(): return jsonify({"status":"ok"})

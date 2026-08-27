@@ -178,7 +178,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 <div class="box" style="margin-top:14px"><div class="eyebrow">STRONG SIGNAL RULE</div><div class="why">강한 신호는 Evidence 건수만으로 결정하지 않습니다. 서로 독립된 source family의 반복 확인과 실제 implementation evidence가 함께 있어야 합니다.</div></div></section><section id="balance" class="view"><div class="title">Source Balance Audit</div>
 <div class="count">Evidence 수가 많아져도 특정 기관·기관유형에 편중되면 Signal이 왜곡될 수 있어 corpus 구성 자체를 점검합니다.</div>
 <div class="metrics" style="grid-template-columns:repeat(3,1fr)">
-<div class="box"><div class="eyebrow">TOTAL</div><div class="big" data-db-count>—</div><div class="why">verified representative corpus</div></div>
+<div class="box"><div class="eyebrow">TOTAL</div><div class="big" data-db-count>__DB_EVIDENCE_COUNT__</div><div class="why">verified representative corpus</div></div>
 <div class="box"><div class="eyebrow">TOP INSTITUTION</div><div class="big">13</div><div class="why">EDUCAUSE</div></div>
 <div class="box"><div class="eyebrow">TOP SOURCE FAMILY</div><div class="big">37</div><div class="why">고등교육 리딩기관</div></div>
 </div><div class="layout"><div><div class="title">기관유형 분포</div><div class="panel"><div class="sideitem"><b>고등교육 리딩기관</b><small>37건 · 47%</small></div><div class="sideitem"><b>해외 대학</b><small>16건 · 20%</small></div><div class="sideitem"><b>국내 대학</b><small>12건 · 15%</small></div><div class="sideitem"><b>국내 정책·지원기관</b><small>9건 · 11%</small></div><div class="sideitem"><b>국제·정책기관</b><small>5건 · 6%</small></div></div></div><div><div class="title">편중 방지 규칙</div><div class="panel">
@@ -265,7 +265,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 </div>
 <div class="layout"><div><div class="title">DB 핵심 테이블</div><div class="panel"><div class="sideitem"><b>sources</b><small>Registry · priority · official domain</small></div><div class="sideitem"><b>candidates</b><small>발견 URL · fingerprint · discovery time</small></div><div class="sideitem"><b>evidence</b><small>verified facts · provenance · immutable ID</small></div><div class="sideitem"><b>revisions</b><small>수정 전후 · 이유 · timestamp</small></div></div></div><div><div class="title">자동 게시 금지 조건</div><div class="panel"><div class="sideitem"><b>Unsupported claim</b><small>원문이 fact를 직접 지지하지 않음</small></div><div class="sideitem"><b>Ambiguous scope</b><small>정책인지 권고인지 불분명</small></div><div class="sideitem"><b>Conflicting metadata</b><small>날짜·기관·버전 충돌</small></div><div class="sideitem"><b>Duplicate unresolved</b><small>기존 Evidence와 관계 불명확</small></div></div></div></div></section><section id="release" class="view"><div class="title">Release Readiness</div><div class="count">여러 단계의 설계·조사·검증을 하나의 운영 가능한 프로토타입 기준으로 통합 점검합니다.</div>
 <div class="metrics" style="grid-template-columns:repeat(4,1fr)">
-<div class="box"><div class="eyebrow">EVIDENCE</div><div class="big" data-db-count>—</div><div class="why">대표 검증 corpus</div></div>
+<div class="box"><div class="eyebrow">EVIDENCE</div><div class="big" data-db-count>__DB_EVIDENCE_COUNT__</div><div class="why">대표 검증 corpus</div></div>
 <div class="box"><div class="eyebrow">PIPELINE</div><div class="big">READY</div><div class="why">discover → verify → publish</div></div>
 <div class="box"><div class="eyebrow">INTELLIGENCE</div><div class="big">READY</div><div class="why">signals · gaps · decisions</div></div>
 <div class="box"><div class="eyebrow">UPDATE MODE</div><div class="big">MANUAL</div><div class="why">공식 원문 검증 후 수동 반영</div></div>
@@ -510,7 +510,7 @@ const card=x=>`<div class="row"><div class="meta"><span class="pill">${x.group}<
 
 const NAV_GROUPS={
  brief:[["today","오늘의 브리핑"],["decision","의사결정 요약"],["briefing","보고용 브리핑"]],
- signal:[["signals","변화 신호"],["trends","트렌드"],["scoring","신호 점수"],["timeline","변화 타임라인"],["evidence","신호별 근거"],["priority","우선순위"]],
+ signal:[["signals","변화 신호"],["priority","트렌드"],["scoring","신호 점수"],["timeline","변화 타임라인"],["evidence","신호별 근거"],["priority","우선순위"]],
  research:[["explore","자료 탐색"],["screening","자료 선별"],["batch2","추가 조사"],["researchq","조사 대기열"],["rqresults","조사 결과"],["registry","출처 목록"],["watchlist","관찰 목록"],["library","전체 자료"]],
  compare:[["compare","사례 비교"],["cases","대학 사례"],["gaps","근거 공백 분석"]],
  implementation:[["tracker","도입 현황"],["ladder","도입 단계"],["deepdive","도입 사례 분석"],["measurement","성과 측정"],["outcomes","성과 근거"],["impact","영향 추적"]],

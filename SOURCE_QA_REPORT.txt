@@ -1,0 +1,31 @@
+AI RADAR SOURCE-LEVEL QA — v3
+Actual source deletion, not visual hiding.
+
+Duplicate IDs: 0 PASS
+Hidden duplicate view sections: 0 PASS
+TOTAL 79: 0 PASS
+EVIDENCE 72: 0 PASS
+LIVE BACKEND: 0 PASS
+Old scheduler-needed text: 0 PASS
+Old prototype sentence: 0 PASS
+Visible v6.x-v9.x labels: 0 PASS
+
+SQLite active Evidence: 117
+Blank URLs: 0
+Latest evidence date: 2026-08-24
+Embedded evidence corpus: REMOVED
+Server-side Evidence injection into first HTML response: PASS
+Server-side count/date injection into first HTML response: PASS
+
+Navigation targets checked: 42
+Missing/non-unique targets: 0 PASS
+Stale 'trends' target corrected to existing priority view.
+
+20-university map:
+- July final list: Dongseo included / Soonchunhyang excluded
+- April stage retained separately
+- July change retained as UPDATED
+
+Runtime-only checks after deployment:
+- external URL link-health
+- JSON/CSV/Snapshot browser download behavior
