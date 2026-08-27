@@ -3,20 +3,23 @@
   "duplicate_url_pairs_reviewed": 16,
   "true_duplicate_pairs_removed": 13,
   "intentional_same_source_pairs_retained": 3,
-  "active_after": 104,
-  "unique_source_urls_after": 101,
+  "active_after": 103,
+  "unique_source_urls_after": 100,
   "remaining_duplicate_groups": [
     {
       "ids": "E0103,E0104",
-      "n": 2
+      "n": 2,
+      "reason": "intentional same-source distinct fact"
     },
     {
       "ids": "E0005,E0088",
-      "n": 2
+      "n": 2,
+      "reason": "intentional same-source distinct fact"
     },
     {
       "ids": "E0113,E0114",
-      "n": 2
+      "n": 2,
+      "reason": "intentional same-source distinct fact"
     }
   ],
   "deleted_to_survivor": {
@@ -75,5 +78,11 @@
       "verification_status": "verified",
       "fact": "20개 참여대학 사업단이 출범했으며 서울여대와 동국대 WISE가 사업 추진 전략과 사업 계획을 발표·공유했습니다."
     }
-  }
+  },
+  "canonical_duplicate_added": {
+    "deleted": "E0042",
+    "survivor": "E0087",
+    "canonical_key": "daegu.ac.kr/article/SHARE_NOTICE/detail/3007"
+  },
+  "canonical_source_count_after": 100
 }
