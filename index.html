@@ -18,7 +18,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 
 
 <section id="decision" class="view">
-<div class="title">의사결정 요약</div>
+<div class="title">Decision Brief</div>
 <div class="count">자료를 읽는 데서 끝내지 않고, 현재 근거가 어떤 의사결정 질문으로 이어지는지 한 화면에서 봅니다.</div>
 <div class="feed">
 <div class="row"><div class="meta"><span class="pill core">HIGH CONFIDENCE</span><span>Assessment</span></div><h3>평가정책은 ‘AI 허용 여부’보다 평가설계 자체를 다뤄야 하는가?</h3><p>복수의 고등교육 리딩기관과 대학 사례에서 process/authentic assessment, 학습성과 정렬, 명시적 AI 사용조건이 반복됩니다.</p><div class="why"><b>검토 포인트:</b> 과제별 AI policy · 학습과정 증거 · oral/dialogic assessment · 교수자 지원</div></div>
@@ -26,7 +26,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 <div class="row"><div class="meta"><span class="pill">RISING</span><span>Institution</span></div><h3>AI 전략의 범위를 교수학습에서 데이터·업무·조직 운영까지 넓힐 것인가?</h3><p>2026년 자료에서는 institutional transformation, digital maturity, workforce redesign가 빠르게 부상합니다.</p><div class="why"><b>검토 포인트:</b> 데이터 거버넌스 · 업무 재설계 · 조직 AI 역량 · 성숙도 진단</div></div>
 <div class="row"><div class="meta"><span class="pill">WATCH</span><span>Student Experience</span></div><h3>AI 도입 효과를 무엇으로 측정할 것인가?</h3><p>학생지원·진로·학습경험에서 AI 활용이 늘지만, 도입 자체보다 measurable impact와 outcomes를 요구하는 흐름이 나타납니다.</p><div class="why"><b>검토 포인트:</b> 학생경험 · 지원효율 · persistence/completion · 신뢰·접근성</div></div>
 </div>
-<div class="box" style="margin-top:14px"><div class="eyebrow">INTERPRETATION RULE</div><div class="why">의사결정 요약는 공식자료의 직접 문구가 아니라 Radar가 복수 근거를 종합해 제시하는 검토 질문입니다. 근거는 ‘신호별 근거’에서 원문 단위로 확인할 수 있습니다.</div></div>
+<div class="box" style="margin-top:14px"><div class="eyebrow">INTERPRETATION RULE</div><div class="why">Decision Brief는 공식자료의 직접 문구가 아니라 Radar가 복수 근거를 종합해 제시하는 검토 질문입니다. 근거는 ‘신호별 근거’에서 원문 단위로 확인할 수 있습니다.</div></div>
 </section>
 <section id="signals" class="view">
   <div class="title">변화 신호 — 자료를 읽지 않아도 흐름부터 파악</div>
@@ -57,7 +57,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 </section>
 <section id="explore" class="view"><div class="title">자료 탐색</div><div class="controls"><input id="q" placeholder="제목·기관·내용 검색"><select id="year"><option value="">전체 연도</option></select><select id="group"><option value="">전체 기관유형</option></select><select id="topic"><option value="">전체 주제</option></select><select id="sort"><option value="new">최신순</option><option value="old">오래된순</option><option value="core">중요자료 우선</option></select></div><div id="count" class="count"></div><div id="results" class="feed"></div></section>
 <section id="screening" class="view">
-<div class="title">Institution 자료 선별 · v9.3–v9.6</div>
+<div class="title">Institution Screening Engine · v9.3–v9.6</div>
 <div class="count">나머지 참여대학을 동일한 기준으로 빠르게 선별하고, L2 이상으로 올릴 만한 공식 근거가 있는 대학을 우선 조사합니다.</div>
 
 <div class="metrics" style="grid-template-columns:repeat(4,1fr)">
@@ -68,7 +68,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 </div>
 
 <table><thead><tr><th>판정</th><th>조건</th><th>조치</th></tr></thead><tbody>
-<tr><td><span class="pill core">PROMOTE</span></td><td>공식 L2 implementation Evidence 확인</td><td>도입 현황에 추가</td></tr>
+<tr><td><span class="pill core">PROMOTE</span></td><td>공식 L2 implementation Evidence 확인</td><td>Implementation Tracker에 추가</td></tr>
 <tr><td><span class="pill">FOLLOW</span></td><td>계획은 있으나 운영 여부 불명확</td><td>변경감지 Watchlist 유지</td></tr>
 <tr><td><span class="pill">HOLD</span></td><td>선정 사실 외 공식 구현근거 부족</td><td>L1 유지</td></tr>
 <tr><td><span class="pill">REVIEW</span></td><td>날짜·범위·실행상태 충돌</td><td>검증 큐로 이동</td></tr>
@@ -89,7 +89,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 </div></div></div>
 
 <div class="box"><div class="eyebrow">ANTI-INFLATION RULE</div><div class="why">선정대학 20개를 모두 자동으로 L2로 올리지 않습니다. 기관별 공식 implementation Evidence가 확인된 대학만 단계가 올라갑니다.</div></div>
-</section><section id="tracker" class="view"><div class="title">Korea 도입 현황 · v8.9–v9.2</div>
+</section><section id="tracker" class="view"><div class="title">Korea Implementation Tracker · v8.9–v9.2</div>
 <div class="count">20개 대학을 같은 기준으로 추적하고, 선정·계획·운영·참여·성과 단계를 분리합니다.</div>
 <table><thead><tr><th>대학</th><th>현재 단계</th><th>공식 Evidence</th><th>다음 Gate</th></tr></thead><tbody>
 <tr><td><b>서울여자대학교</b></td><td><span class="pill core">L2+</span></td><td>교육모형 · 전담기능 · AI 프로젝트형 교육 운영</td><td>참여·학습성과</td></tr>
@@ -112,7 +112,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 <div class="feed"><div class="row"><h3>v8.5 · Batch expansion</h3><p>세종대를 기관별 L2 추적대상으로 추가.</p></div>
 <div class="row"><h3>v8.6 · Curriculum granularity</h3><p>‘AI 교육 추진’ 대신 교육모형·교과 수·마이크로전공 등 구현 단위를 별도 기록.</p></div>
 <div class="row"><h3>v8.7 · Planned vs operating</h3><p>개발계획과 실제 개설·운영을 구분하는 상태 필드를 추가하도록 사양화.</p></div>
-<div class="row"><h3>v8.8 · Outcome search gate</h3><p>L2 대학부터 수강인원·교수자 참여·학습성과·평가 변화 자료를 우선 탐색.</p></div></div></section><section id="deepdive" class="view"><div class="title">Institution 도입 사례 분석 · v8.1–v8.4</div>
+<div class="row"><h3>v8.8 · Outcome search gate</h3><p>L2 대학부터 수강인원·교수자 참여·학습성과·평가 변화 자료를 우선 탐색.</p></div></div></section><section id="deepdive" class="view"><div class="title">Institution Implementation Deep Dive · v8.1–v8.4</div>
 <div class="count">20개 선정대학 가운데 공식 기관자료에서 실제 실행 구조가 확인되는 대학부터 Implementation Ladder를 올립니다.</div>
 <table><thead><tr><th>대학</th><th>현재 Level</th><th>확인된 실행</th><th>다음 확인</th></tr></thead><tbody>
 <tr><td><b>서울여자대학교</b></td><td><span class="pill core">L2</span></td><td>AI 교과목 개발 · 교수자 역량 프로그램 · 온라인 콘텐츠 · 성과지표 관리 전담기능</td><td>실제 교과목·참여 데이터</td></tr>
@@ -123,7 +123,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 <div class="row"><h3>v8.2 · Ladder promotion</h3><p>두 대학을 선정(L1)에서 실제 운영구조 확인(L2)으로 승격.</p></div>
 <div class="row"><h3>v8.3 · Outcome gate</h3><p>채용·계획·사업단 존재만으로 L3/L4로 올리지 않음. 실제 참여·성과 수치가 필요.</p></div>
 <div class="row"><h3>v8.4 · Next institution batch</h3><p>나머지 대학을 동일 기준으로 조사하되 공식 교과목·교수개발·전담조직 Evidence가 있는 곳부터 확장.</p></div></div>
-</section><section id="koreamap" class="view"><div class="title">2026 AI 기본교육과정 · 20개 대학 현황 · v7.8</div>
+</section><section id="koreamap" class="view"><div class="title">2026 AI 기본교육과정 · 20개 대학 Map · v7.8</div>
 <div class="count">선정 사실과 실제 구현 Evidence를 분리해 대학별로 추적하기 위한 기준 목록입니다.</div><div id="uni20"></div>
 <div class="box"><div class="eyebrow">TRACKING RULE</div><div class="why">‘선정 대학’이라는 사실만으로 해당 대학의 교육과정이 이미 운영 중이라고 표시하지 않습니다. 대학별 공식 원문이 확인될 때 implementation 상태를 별도로 올립니다.</div></div></section><section id="ladder" class="view"><div class="title">Korea Implementation Ladder · v7.9</div><div class="count">국내 AI 교육혁신을 발표 건수가 아니라 실행 성숙도에 따라 추적합니다.</div>
 <table><thead><tr><th>Level</th><th>Evidence</th><th>Radar 해석</th></tr></thead><tbody>
@@ -268,7 +268,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 
 
 <section id="screening" class="view">
-<div class="title">Institution 자료 선별 · v9.3–v9.6</div>
+<div class="title">Institution Screening Engine · v9.3–v9.6</div>
 <div class="count">나머지 참여대학을 동일한 기준으로 빠르게 선별하고, L2 이상으로 올릴 만한 공식 근거가 있는 대학을 우선 조사합니다.</div>
 
 <div class="metrics" style="grid-template-columns:repeat(4,1fr)">
@@ -279,7 +279,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 </div>
 
 <table><thead><tr><th>판정</th><th>조건</th><th>조치</th></tr></thead><tbody>
-<tr><td><span class="pill core">PROMOTE</span></td><td>공식 L2 implementation Evidence 확인</td><td>도입 현황에 추가</td></tr>
+<tr><td><span class="pill core">PROMOTE</span></td><td>공식 L2 implementation Evidence 확인</td><td>Implementation Tracker에 추가</td></tr>
 <tr><td><span class="pill">FOLLOW</span></td><td>계획은 있으나 운영 여부 불명확</td><td>변경감지 Watchlist 유지</td></tr>
 <tr><td><span class="pill">HOLD</span></td><td>선정 사실 외 공식 구현근거 부족</td><td>L1 유지</td></tr>
 <tr><td><span class="pill">REVIEW</span></td><td>날짜·범위·실행상태 충돌</td><td>검증 큐로 이동</td></tr>
@@ -300,7 +300,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 </div></div></div>
 
 <div class="box"><div class="eyebrow">ANTI-INFLATION RULE</div><div class="why">선정대학 20개를 모두 자동으로 L2로 올리지 않습니다. 기관별 공식 implementation Evidence가 확인된 대학만 단계가 올라갑니다.</div></div>
-</section><section id="tracker" class="view"><div class="title">Korea 도입 현황 · v8.9–v9.2</div>
+</section><section id="tracker" class="view"><div class="title">Korea Implementation Tracker · v8.9–v9.2</div>
 <div class="count">20개 대학을 같은 기준으로 추적하고, 선정·계획·운영·참여·성과 단계를 분리합니다.</div>
 <table><thead><tr><th>대학</th><th>현재 단계</th><th>공식 Evidence</th><th>다음 Gate</th></tr></thead><tbody>
 <tr><td><b>서울여자대학교</b></td><td><span class="pill core">L2+</span></td><td>교육모형 · 전담기능 · AI 프로젝트형 교육 운영</td><td>참여·학습성과</td></tr>
@@ -323,7 +323,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 <div class="feed"><div class="row"><h3>v8.5 · Batch expansion</h3><p>세종대를 기관별 L2 추적대상으로 추가.</p></div>
 <div class="row"><h3>v8.6 · Curriculum granularity</h3><p>‘AI 교육 추진’ 대신 교육모형·교과 수·마이크로전공 등 구현 단위를 별도 기록.</p></div>
 <div class="row"><h3>v8.7 · Planned vs operating</h3><p>개발계획과 실제 개설·운영을 구분하는 상태 필드를 추가하도록 사양화.</p></div>
-<div class="row"><h3>v8.8 · Outcome search gate</h3><p>L2 대학부터 수강인원·교수자 참여·학습성과·평가 변화 자료를 우선 탐색.</p></div></div></section><section id="deepdive" class="view"><div class="title">Institution 도입 사례 분석 · v8.1–v8.4</div>
+<div class="row"><h3>v8.8 · Outcome search gate</h3><p>L2 대학부터 수강인원·교수자 참여·학습성과·평가 변화 자료를 우선 탐색.</p></div></div></section><section id="deepdive" class="view"><div class="title">Institution Implementation Deep Dive · v8.1–v8.4</div>
 <div class="count">20개 선정대학 가운데 공식 기관자료에서 실제 실행 구조가 확인되는 대학부터 Implementation Ladder를 올립니다.</div>
 <table><thead><tr><th>대학</th><th>현재 Level</th><th>확인된 실행</th><th>다음 확인</th></tr></thead><tbody>
 <tr><td><b>서울여자대학교</b></td><td><span class="pill core">L2</span></td><td>AI 교과목 개발 · 교수자 역량 프로그램 · 온라인 콘텐츠 · 성과지표 관리 전담기능</td><td>실제 교과목·참여 데이터</td></tr>
@@ -334,7 +334,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 <div class="row"><h3>v8.2 · Ladder promotion</h3><p>두 대학을 선정(L1)에서 실제 운영구조 확인(L2)으로 승격.</p></div>
 <div class="row"><h3>v8.3 · Outcome gate</h3><p>채용·계획·사업단 존재만으로 L3/L4로 올리지 않음. 실제 참여·성과 수치가 필요.</p></div>
 <div class="row"><h3>v8.4 · Next institution batch</h3><p>나머지 대학을 동일 기준으로 조사하되 공식 교과목·교수개발·전담조직 Evidence가 있는 곳부터 확장.</p></div></div>
-</section><section id="koreamap" class="view"><div class="title">2026 AI 기본교육과정 · 20개 대학 현황 · v7.8</div>
+</section><section id="koreamap" class="view"><div class="title">2026 AI 기본교육과정 · 20개 대학 Map · v7.8</div>
 <div class="count">선정 사실과 실제 구현 Evidence를 분리해 대학별로 추적하기 위한 기준 목록입니다.</div><div id="uni20"></div>
 <div class="box"><div class="eyebrow">TRACKING RULE</div><div class="why">‘선정 대학’이라는 사실만으로 해당 대학의 교육과정이 이미 운영 중이라고 표시하지 않습니다. 대학별 공식 원문이 확인될 때 implementation 상태를 별도로 올립니다.</div></div></section><section id="ladder" class="view"><div class="title">Korea Implementation Ladder · v7.9</div><div class="count">국내 AI 교육혁신을 발표 건수가 아니라 실행 성숙도에 따라 추적합니다.</div>
 <table><thead><tr><th>Level</th><th>Evidence</th><th>Radar 해석</th></tr></thead><tbody>
@@ -502,7 +502,7 @@ table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(-
 <button id="exportCsv">CSV 다운로드</button>
 <button id="exportSnapshot">Snapshot 다운로드</button>
 </div><span id="exportMsg" class="count"></span>
-<div class="box" style="margin-top:14px"><div class="eyebrow">DATA RULE</div><div class="why">Export에는 검증 Evidence와 provenance를 포함합니다. Signal·Priority·의사결정 요약 같은 Intelligence 해석은 별도 층으로 유지합니다.</div></div>
+<div class="box" style="margin-top:14px"><div class="eyebrow">DATA RULE</div><div class="why">Export에는 검증 Evidence와 provenance를 포함합니다. Signal·Priority·Decision Brief 같은 Intelligence 해석은 별도 층으로 유지합니다.</div></div>
 </section><section id="briefing" class="view">
 <div class="title">보고용 Executive Brief</div>
 <div class="count">Radar의 검증 Evidence와 Intelligence를 회의·보고용으로 짧게 재구성하는 화면입니다.</div>
